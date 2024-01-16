@@ -1,11 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
+      <header className='min-h-screen bg-primary flex items-center justify-center flex-col text-text'>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
