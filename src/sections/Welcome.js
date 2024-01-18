@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Typewriter, Cursor } from 'react-simple-typewriter';
+import { Typewriter } from 'react-simple-typewriter';
+import { AnimatePresence, motion } from 'framer-motion';
+import scroll from '../img/scroll.png';
 import ParticleBg from '../components/ParticleBg';
 
 function Welcome() {
@@ -18,6 +19,17 @@ function Welcome() {
           words={words}
           delaySpeed={1000}
           loop='true'
+        />
+      </div>
+
+      <div className='absolute bottom-0 mb-4 mx-4 z-10'>
+        <motion.img
+          className='invert h-10 w-10'
+          initial={{ y: 0 }}
+          animate={{ y: [0, -20, 0] }}
+          transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+          src={scroll}
+          alt='scroll'
         />
       </div>
     </header>
