@@ -14,7 +14,7 @@ export default {
     composite: 'destination-out',
     cover: {
       color: {
-        value: '#fff',
+        value: '#EB5E28',
       },
       opacity: 1,
     },
@@ -64,15 +64,15 @@ export default {
         quantity: 5,
         particles: {
           color: {
-            value: '#ff0000',
+            value: '#EB5E28',
             animation: {
-              enable: true,
+              enable: false,
               speed: 400,
               sync: true,
             },
           },
           collisions: {
-            enable: false,
+            enable: true,
           },
           links: {
             enable: false,
@@ -166,19 +166,11 @@ export default {
       },
       light: {
         area: {
-          gradient: {
-            start: {
-              value: '#ffffff',
-            },
-            stop: {
-              value: '#000000',
-            },
-          },
           radius: 1000,
         },
         shadow: {
           color: {
-            value: '#000000',
+            value: '#EB5E28',
           },
           length: 2000,
         },
@@ -220,7 +212,7 @@ export default {
       animation: {
         h: {
           count: 0,
-          enable: true,
+          enable: false,
           speed: 1,
           decay: 0,
           delay: 0,
@@ -348,7 +340,7 @@ export default {
     shadow: {
       blur: 0,
       color: {
-        value: '#000',
+        value: '#EB5E28',
       },
       enable: false,
       offset: {
@@ -369,11 +361,11 @@ export default {
       },
       animation: {
         count: 0,
-        enable: true,
+        enable: false,
         speed: 3,
         decay: 0,
         delay: 0,
-        sync: false,
+        sync: true,
         mode: 'auto',
         startValue: 'random',
         destroy: 'none',
@@ -491,7 +483,7 @@ export default {
     links: {
       blink: false,
       color: {
-        value: 'random',
+        value: '#EB5E28',
       },
       consent: false,
       distance: 100,
