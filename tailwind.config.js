@@ -3,10 +3,11 @@ module.exports = {
   content: ['./src/**/*.{html,js}'],
   theme: {
     colors: {
-      'primary': '#eff0f3',
-      'accent': '#ff8e3c',
-      'text': '#0d0d0d',
-      'text-light': '#2a2a2a'
+      deep: '#252422',
+      accent: '#FFFCF2',
+      'accent-light': '#CCC5B9',
+      flame: '#EB5E28',
+      'background-light': '#403D39',
     },
     extend: {},
   },

@@ -1,11 +1,12 @@
-import Home from './Home';
+import Home from './sections/Home';
+import Welcome from './sections/Welcome';
 
 function App() {
   return (
-    <>
-      <h1> Test</h1>
+    <div className='bg-deep text-accent'>
+      <Welcome />
       <Home />
-    </>
+    </div>
   );
 }
 
