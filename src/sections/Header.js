@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import scroll from '../img/scroll.png';
 import ParticleBg from '../components/ParticleBg';
 
-function Welcome() {
+function Header() {
   const words = ['Developer', 'Engineer', 'Creative Thinker'];
 
   return (
@@ -36,4 +36,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default Header;

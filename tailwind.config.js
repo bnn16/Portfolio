@@ -7,6 +7,7 @@ module.exports = {
       accent: '#FFFCF2',
       'accent-light': '#CCC5B9',
       flame: '#EB5E28',
+      'flame-dark': '#C8491E',
       'background-light': '#403D39',
     },
     extend: {},

@@ -1,11 +1,13 @@
 import Home from './sections/Home';
-import Welcome from './sections/Welcome';
+import Header from './sections/Header';
+import Experience from './sections/Experience';
 
 function App() {
   return (
     <div className='bg-deep text-accent'>
-      <Welcome />
+      <Header />
       <Home />
+      <Experience />
     </div>
   );
 }
