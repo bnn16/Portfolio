@@ -1,3 +1,5 @@
+import Reveal from '../components/Reveal';
+
 function Home() {
   return (
     <section className='w-full min-h-screen text-accent py-12 md:py-24 lg:py-32 flex justify-center items-center'>
@@ -7,18 +9,23 @@ function Home() {
             <h1 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none'>
               Hello <span className='text-flame'>Friend</span>, I'm Bogdan
             </h1>
-            <p className='mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400'>
-              Full-stack developer & 2nd-year uni student, studying ICT &
-              Cybersecurity & Software Engineering. Proficient in JavaScript, C
-              and Python. <br />I love solving complex problems and creating
-              intuitive user experiences. I'm currently working on{' '}
-            </p>
+
+            <Reveal>
+              <p className='mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400'>
+                Full-stack developer & 2nd-year uni student, studying ICT &
+                Cybersecurity & Software Engineering. Proficient in JavaScript
+                and Python. <br />I love solving complex problems and creating
+                intuitive user experiences. I'm currently working on learning C.
+              </p>
+            </Reveal>
           </div>
-          <div className='space-x-4'>
-            <button className='btn btn-primary bg-flame text-accent py-4 px-4 rounded hover:bg-flame-dark'>
-              Contact me
-            </button>
-          </div>
+          <Reveal>
+            <div className='space-x-4'>
+              <button className='btn btn-primary bg-flame text-accent py-4 px-4 rounded hover:bg-flame-dark'>
+                Contact me
+              </button>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { AnimatePresence, motion } from 'framer-motion';
 import scroll from '../img/scroll.png';
 import ParticleBg from '../components/ParticleBg';
+import Reveal from '../components/Reveal';
 
 function Header() {
   const words = ['Developer', 'Engineer', 'Creative Thinker'];
@@ -9,18 +10,22 @@ function Header() {
   return (
     <header className='flex h-screen items-center justify-center flex-col'>
       <ParticleBg />
-      <h1 className='text-4xl font-bold text-accent z-10    '>
-        Bogdan <span className='text-flame'>Nikolov</span>
-      </h1>
-      <div className='flex-row z-10'>
-        <Typewriter
-          cursor='true'
-          cursorColor='#EB5E28'
-          words={words}
-          delaySpeed={1000}
-          loop='true'
-        />
-      </div>
+      <Reveal>
+        <h1 className='text-4xl font-bold text-accent z-10    '>
+          Bogdan <span className='text-flame'>Nikolov</span>
+        </h1>
+      </Reveal>
+      <Reveal>
+        <div className='flex-row z-10'>
+          <Typewriter
+            cursor='true'
+            cursorColor='#EB5E28'
+            words={words}
+            delaySpeed={1000}
+            loop='true'
+          />
+        </div>
+      </Reveal>
 
       <div className='absolute bottom-0 mb-4 mx-4 z-10'>
         <motion.img
