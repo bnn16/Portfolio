@@ -1,3 +1,4 @@
+import useLockBodyScroll from '@custom-react-hooks/use-lock-body-scroll';
 import { motion } from 'framer-motion';
 
 function Card({ isExpanded, onClick, data }) {
@@ -7,16 +8,16 @@ function Card({ isExpanded, onClick, data }) {
     transition: { delay: 0.3 },
     initial: { opacity: 0, scale: 1 },
   };
-
+  useLockBodyScroll(isExpanded);
   return (
     <motion.div
-      className={`relative w-80 bg-flame p-8 rounded-md cursor-pointer ${
+      className={`relative w-10/12 bg-flame p-8 rounded-md cursor-pointer ${
         isExpanded ? 'h-auto z-20' : 'h-48'
       }`}
       layout
     >
       <motion.h3 className='text-lg font-semibold mb-4' layout='position'>
-        Expandable Card 🔥 + {data.title}
+        {data.title}
       </motion.h3>
 
       <motion.p className='text-sm text-justify mb-4' layout='position'>
