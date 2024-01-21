@@ -88,12 +88,12 @@ function Projects() {
       <div className={`p-10 ${expandedIndex !== null ? 'blur' : ''}`}>
         <div className='flex flex-col'>
           <Reveal>
-            <h1 className='text-5xl font-bold underline-offset-6 underline decoration-flame'>
+            <h1 className='text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold underline-offset-6 underline decoration-flame'>
               Projects.
             </h1>
           </Reveal>
         </div>
-        <div className='flex flex-wrap justify-evenly gap-y-12 gap-x-12 mt-6'>
+        <div className='flex flex-wrap justify-evenly gap-y-8 sm:gap-y-12 lg:gap-y-16 gap-x-4 sm:gap-x-8 lg:gap-x-12 mt-6 sm:mt-12 lg:mt-20'>
           {getVisibleItems()}
         </div>
         <div className='flex justify-center mt-4'>
@@ -130,7 +130,7 @@ function Projects() {
             <Card
               isExpanded={true}
               onClick={handleCardClose}
-              index={expandedIndex}
+              data={projectData[expandedIndex]}
             />
           </Modal>
         )}

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-function Card({ isExpanded, onClick }) {
+function Card({ isExpanded, onClick, data }) {
   const animated = {
     layout: 'position',
     animate: { opacity: 1, scale: isExpanded ? 1.1 : 1 },
@@ -16,7 +16,7 @@ function Card({ isExpanded, onClick }) {
       layout
     >
       <motion.h3 className='text-lg font-semibold mb-4' layout='position'>
-        Expandable Card 🔥
+        Expandable Card 🔥 + {data.title}
       </motion.h3>
 
       <motion.p className='text-sm text-justify mb-4' layout='position'>
