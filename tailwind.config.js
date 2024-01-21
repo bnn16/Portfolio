@@ -9,6 +9,7 @@ module.exports = {
       flame: '#EB5E28',
       'flame-dark': '#C8491E',
       'background-light': '#403D39',
+      'background-dark': '#2D2B27',
     },
     extend: {},
   },
