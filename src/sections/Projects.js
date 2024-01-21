@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Reveal from '../components/Reveal';
 import { FaReact } from 'react-icons/fa';
-import { DiGnu } from 'react-icons/di';
+import { SiDotnet } from 'react-icons/si';
+import { DiGnu, DiGo, DiJava, DiJavascript1, DiPython } from 'react-icons/di';
 import Card from '../components/Card';
 import Modal from '../components/Modal';
 import MiniCard from '../components/MiniCard';
@@ -14,30 +15,38 @@ function Projects() {
       icon: <FaReact />,
     },
     {
-      title: 'C++ Compiler',
-      icon: <DiGnu />,
+      title: 'Ordina Check-in/out',
+      icon: <DiJavascript1 />,
     },
 
     {
-      title: 'C++ Compiler',
-      icon: <DiGnu />,
+      title: 'Youtubey',
+      icon: <DiJava />,
     },
     {
-      title: 'C++ Compiler',
-      icon: <DiGnu />,
+      title: 'gRPC and RabbitMQ',
+      icon: <DiGo />,
     },
     {
-      title: 'C++ Compiler',
-      icon: <DiGnu />,
+      title: 'Stack WebScraper',
+      icon: <DiPython />,
     },
     {
-      title: 'C++ Compiler',
-      icon: <DiGnu />,
+      title: 'Event Platform',
+      icon: <SiDotnet />,
     },
 
     {
-      title: 'C++ Compiler',
-      icon: <DiGnu />,
+      title: 'Library Management System',
+      icon: <SiDotnet />,
+    },
+    {
+      title: 'High School Diploma Project',
+      icon: <FaReact />,
+    },
+    {
+      title: 'Number Guessing Game',
+      icon: <DiJavascript1 />,
     },
   ];
 
