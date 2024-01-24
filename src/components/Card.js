@@ -1,10 +1,11 @@
 import useLockBodyScroll from '@custom-react-hooks/use-lock-body-scroll';
 import { motion } from 'framer-motion';
 import PortfolioPage from '../pages/PortfolioPage';
+import OrdinaPage from '../pages/OrdinaPage';
 
 const components = {
   portfolio: PortfolioPage,
-  // ordina: OrdinaPage,
+  ordina: OrdinaPage,
   // youtubey: YoutubeyPage,
   // grpc: GrpcPage,
   // webscraper: WebscraperPage,
