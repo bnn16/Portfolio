@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 function Modal({ children }) {
   return (
     <motion.div
-      className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center modal-background'
+      className='fixed top-0 left-0 w-full h-full bg-opacity-50 flex items-center justify-center modal-backdrop'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >

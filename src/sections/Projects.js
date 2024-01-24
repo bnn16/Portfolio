@@ -7,61 +7,75 @@ import { DiGnu, DiGo, DiJava, DiJavascript1, DiPython } from 'react-icons/di';
 import Card from '../components/Card';
 import Modal from '../components/Modal';
 import MiniCard from '../components/MiniCard';
+import PortfolioPage from '../pages/PortfolioPage';
 
 function Projects() {
   const projectData = [
     {
-      title: 'Portfolio Application',
+      title: 'Portfolio',
       icon: <FaReact />,
+      id: 'portfolio',
     },
     {
       title: 'Ordina Check-in/out',
       icon: <DiJavascript1 />,
+      id: 'ordina',
     },
 
     {
       title: 'Youtubey',
       icon: <DiJava />,
+      id: 'youtubey',
     },
     {
       title: 'gRPC and RabbitMQ',
       icon: <DiGo />,
+      id: 'grpc',
     },
     {
       title: 'Stack WebScraper',
       icon: <DiPython />,
+      id: 'webscraper',
     },
     {
       title: 'Event Platform',
       icon: <SiDotnet />,
+      id: 'eventplatform',
     },
 
     {
       title: 'Library Management System',
       icon: <SiDotnet />,
+      id: 'library',
     },
     {
       title: 'High School Diploma Project',
       icon: <FaReact />,
+      id: 'highschool',
     },
     {
       title: 'Number Guessing Game',
       icon: <DiJavascript1 />,
+      id: 'number',
     },
   ];
 
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
   const itemsPerPage = 6;
   const totalItems = projectData.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   const handleMiniCardClick = (index) => {
+    window.scrollTo(0, document.body.scrollHeight);
+    setIsExpanded(true);
     setExpandedIndex(index);
   };
 
   const handleCardClose = () => {
     setExpandedIndex(null);
+    setIsExpanded(false);
   };
 
   const handlePreviousClick = () => {
@@ -135,12 +149,8 @@ function Projects() {
 
       <AnimatePresence>
         {expandedIndex !== null && (
-          <Modal onClose={handleCardClose}>
-            <Card
-              isExpanded={true}
-              onClick={handleCardClose}
-              data={projectData[expandedIndex]}
-            />
+          <Modal>
+            <Card onClick={handleCardClose} data={projectData[expandedIndex]} />
           </Modal>
         )}
       </AnimatePresence>
