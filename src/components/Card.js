@@ -2,11 +2,12 @@ import useLockBodyScroll from '@custom-react-hooks/use-lock-body-scroll';
 import { motion } from 'framer-motion';
 import PortfolioPage from '../pages/PortfolioPage';
 import OrdinaPage from '../pages/OrdinaPage';
+import YoutubeyPage from '../pages/YoutubeyPage';
 
 const components = {
   portfolio: PortfolioPage,
   ordina: OrdinaPage,
-  // youtubey: YoutubeyPage,
+  youtubey: YoutubeyPage,
   // grpc: GrpcPage,
   // webscraper: WebscraperPage,
   // eventplatform: EventPlatformPage,
