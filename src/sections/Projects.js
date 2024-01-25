@@ -3,11 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Reveal from '../components/Reveal';
 import { FaReact } from 'react-icons/fa';
 import { SiDotnet } from 'react-icons/si';
-import { DiGnu, DiGo, DiJava, DiJavascript1, DiPython } from 'react-icons/di';
+import { DiGo, DiJava, DiJavascript1, DiPython } from 'react-icons/di';
 import Card from '../components/Card';
 import Modal from '../components/Modal';
 import MiniCard from '../components/MiniCard';
-import PortfolioPage from '../pages/PortfolioPage';
 
 function Projects() {
   const projectData = [
@@ -62,20 +61,17 @@ function Projects() {
 
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isExpanded, setIsExpanded] = useState(false);
   const itemsPerPage = 6;
   const totalItems = projectData.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   const handleMiniCardClick = (index) => {
     window.scrollTo(0, document.body.scrollHeight);
-    setIsExpanded(true);
     setExpandedIndex(index);
   };
 
   const handleCardClose = () => {
     setExpandedIndex(null);
-    setIsExpanded(false);
   };
 
   const handlePreviousClick = () => {

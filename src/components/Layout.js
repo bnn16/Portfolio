@@ -3,7 +3,7 @@ import React from 'react';
 function Layout({ children, title, sections }) {
   return (
     <div className='container mx-auto p-8'>
-      <div className='text-center'>
+      <div className='text-center text-justify mx-4'>
         <h1 className='text-4xl font-bold mb-2'>{title}</h1>
 
         {sections &&

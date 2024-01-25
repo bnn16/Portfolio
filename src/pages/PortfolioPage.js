@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import { DiReact } from 'react-icons/di';
 import { SiGithubpages, SiTailwindcss } from 'react-icons/si';
+import Icons from '../components/Icons';
 
 const PortfolioPage = () => {
   const sections = [
@@ -18,11 +19,8 @@ const PortfolioPage = () => {
       title: 'Technology Stack',
       content: (
         <>
-          <div className='flex flex-row justify-center flex-grow gap-2'>
-            <DiReact className='text-3xl' />
-            <SiTailwindcss className='text-3xl' />
-            <SiGithubpages className='text-3xl' />
-          </div>
+          <Icons icons={[<DiReact />, <SiTailwindcss />, <SiGithubpages />]} />
+
           <p>
             The backbone of this portfolio is built on React, a powerful
             JavaScript library for building user interfaces. This choice ensures

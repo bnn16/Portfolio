@@ -7,6 +7,19 @@ import home from '../img/ordina/home.png';
 import checkin from '../img/ordina/checkin.png';
 import ms from '../img/ordina/ms.png';
 import ms2 from '../img/ordina/ms2.png';
+import Image from '../components/Image';
+import Icons from '../components/Icons';
+import Code from '../components/Code';
+import Accordian, { AccordianItem } from '../components/Accordian';
+import {
+  json,
+  json2,
+  json3,
+  json4,
+  json5,
+  json6,
+  json7,
+} from '../constants/ordinaData.js';
 
 const OrdinaPage = () => {
   const sections = [
@@ -37,12 +50,15 @@ const OrdinaPage = () => {
       title: 'Technology Stack',
       content: (
         <>
-          <div className='flex flex-row justify-center flex-grow gap-2'>
-            <DiReact className='text-3xl' />
-            <SiTailwindcss className='text-3xl' />
-            <DiMongodb className='text-3xl' />
-            <DiNodejs className='text-3xl' />
-          </div>
+          <Icons
+            icons={[
+              <DiReact />,
+              <SiTailwindcss />,
+              <DiMongodb />,
+              <DiNodejs />,
+            ]}
+          />
+
           <p>
             Originally, the application was supposed to be built using Java
             Spring Boot, but my team and I decided to leverage NodeJS instead.
@@ -64,12 +80,124 @@ const OrdinaPage = () => {
             As for the authentication, we used the MS Azure Active Directory,
             which was already in use by Ordina.
           </p>
-          <div className='flex flex-row flex-grow py-8'>
-            <img src={ms} alt='' />
-          </div>
-          <div className='flex flex-row flex-grow py-8'>
-            <img src={ms2} alt='' />
-          </div>
+          <Image imgsrc={ms} />
+          <Image imgsrc={ms2} />
+
+          <h2 className='text-lg text-flame py-4'>Backend API:</h2>
+          <p>
+            <strong>Routes</strong>
+          </p>
+
+          <p className='pb-4'>
+            <strong>Endpoints for meetings</strong>
+          </p>
+
+          <Accordian className='max-w'>
+            <AccordianItem
+              method='get'
+              value='1'
+              trigger={`/meetings/user/:userID`}
+            >
+              <Code
+                description={
+                  'You get a list of all of the meetings in the following format :'
+                }
+                json={json}
+                language={'json'}
+              />
+            </AccordianItem>
+            <AccordianItem
+              method='get'
+              value='2'
+              trigger={`/meetings/:meetingID`}
+            >
+              <Code
+                description={'You get the meeting in the following json'}
+                json={json2}
+                language={'json'}
+              />
+            </AccordianItem>
+            <AccordianItem method='post' value='3' trigger='/meetings/'>
+              <Code
+                description={
+                  'You create a meeting via sending the example json to the endpoint and you get a meeting with the attendees, having a status of pending'
+                }
+                json={json3}
+                language={'json'}
+              />
+            </AccordianItem>
+            <AccordianItem
+              method='patch'
+              value='4'
+              trigger='/meetings/user/:userID'
+            >
+              <Code
+                description={
+                  'A meeting has 3 statuses accepted, declined, pending, You update the given user status for a meeting and get the meeting as a return.'
+                }
+                json={json4}
+                language={'json'}
+              />
+            </AccordianItem>
+
+            <AccordianItem
+              method='patch'
+              value='5'
+              trigger='/meetings/update/:meetingID'
+            >
+              <Code
+                description={
+                  'This endpoint automatically changes the statuses to all attendees to pending, and updates the date, start and end time. It has an optional update of location. As a return you get the updated meeting information.'
+                }
+                language={'json'}
+                json={json5}
+              />
+            </AccordianItem>
+            <AccordianItem
+              method='patch'
+              value='6'
+              trigger='/meetings/invite/:meetingID'
+            >
+              <Code
+                language={'json'}
+                json={json6}
+                description={
+                  'This endpoint checks if the user is already inside of the meeting, if it`s not inside of the meeting it successfully adds him to the meeting'
+                }
+              />
+            </AccordianItem>
+            <AccordianItem
+              method='delete'
+              value='7'
+              trigger='/meetings/:meetingID'
+            >
+              If you need to delete a meeting just call this endpoint with the
+              meeting id.
+            </AccordianItem>
+          </Accordian>
+
+          <p className='pt-8 pb-4'>
+            <strong>Endpoints for Office creation</strong>
+          </p>
+
+          <Accordian className='max-w'>
+            <AccordianItem method='get' value='8' trigger='/offices/'>
+              <Code
+                description={
+                  'You get a list of all of the offices in the following format'
+                }
+                language='json'
+                json={json7}
+              />
+            </AccordianItem>
+            <AccordianItem
+              method='post'
+              value='9'
+              trigger='/offices/'
+            >
+              <Code description={'You can create an office that requires the following body :'}
+            </AccordianItem>
+          </Accordian>
         </>
       ),
     },
@@ -90,9 +218,7 @@ const OrdinaPage = () => {
             white space, and a few accent colors. <br />
             The first idea was to create a calendar with each persons schedule
           </p>
-          <div className='flex flex-row flex-grow py-8'>
-            <img src={initial} alt='' />
-          </div>
+          <Image imgsrc={initial} />
           <p>
             However, after a meeting with the client, it became clear that they
             didn't want a calendar, but a simple list of people that are in the
@@ -100,31 +226,27 @@ const OrdinaPage = () => {
             So I had to change the design, and I came up with this:
           </p>
 
-          <div className='flex flex-row flex-grow py-8'>
-            <img src={home} alt='' />
-          </div>
+          <Image imgsrc={home} />
           <p>
             The design is simple, but it gets the job done. The user can easily
             check in and out, and see who else is in the office.
           </p>
 
-          <div className='flex flex-row flex-grow py-8'>
-            <img src={checkin} alt='' />
-          </div>
+          <Image imgsrc={checkin} />
 
           <p className='text-lg'>Color Palette</p>
           <ul class='list-disc pl-4'>
             <li>
-              <span class='text-flame'>#EA580C:</span> Commands attention with a
-              vibrant and energetic hue.
+              <span className='text-flame'>#EA580C:</span> Commands attention
+              with a vibrant and energetic hue.
             </li>
             <li>
-              <span class='text-white'>#000000:</span> Provides a bold and
+              <span className='text-white'>#000000:</span> Provides a bold and
               grounding background for contrast.
             </li>
             <li>
-              <span class='text-background-light'>#E2E8F0:</span> Offers a clean
-              canvas for readability and a modern aesthetic.
+              <span className='text-background-light'>#E2E8F0:</span> Offers a
+              clean canvas for readability and a modern aesthetic.
             </li>
           </ul>
           <p>
@@ -142,9 +264,12 @@ const OrdinaPage = () => {
             This project was a great learning experience for me. Here are some
             key takeaways:
           </p>
-          <ul class='pl-4'>
-            <h2 className='text-lg text-flame py-4'>Technical Proficiency: </h2>
+          <ul className='pl-4 list-disc'>
             <li>
+              <h2 className='text-lg text-flame py-4'>
+                Technical Proficiency:{' '}
+              </h2>
+
               <p>
                 Throughout the development of this project, I experienced
                 significant growth in my technical proficiency. Initially, the
@@ -157,10 +282,11 @@ const OrdinaPage = () => {
                 for the frontend, and MongoDB for database management.
               </p>
             </li>
-            <h2 className='text-lg text-flame py-4'>
-              Problem Solving and Adaptability:{' '}
-            </h2>
+
             <li>
+              <h2 className='text-lg text-flame py-4'>
+                Problem Solving and Adaptability:{' '}
+              </h2>
               <p>
                 One of the notable challenges we encountered was a shift in the
                 client's requirements regarding the user interface. Initially
@@ -172,10 +298,11 @@ const OrdinaPage = () => {
                 evolving project needs.
               </p>
             </li>
-            <h2 className='text-lg text-flame py-4'>
-              Design Thinking and User Experience:{' '}
-            </h2>
+
             <li>
+              <h2 className='text-lg text-flame py-4'>
+                Design Thinking and User Experience:{' '}
+              </h2>
               <p>
                 Being responsible for both the frontend and backend development,
                 I played a crucial role in the design process. I learned to
@@ -185,10 +312,11 @@ const OrdinaPage = () => {
                 experience over personal preferences.
               </p>
             </li>
-            <h2 className='text-lg text-flame py-4'>
-              Collaboration and Client Interaction:{' '}
-            </h2>
+
             <li>
+              <h2 className='text-lg text-flame py-4'>
+                Collaboration and Client Interaction:{' '}
+              </h2>
               <p>
                 Working on a real-world project for Ordina provided me with
                 valuable experience in collaboration and client interaction. The
@@ -199,10 +327,11 @@ const OrdinaPage = () => {
                 and manage client expectations effectively.
               </p>
             </li>
-            <h2 className='text-lg text-flame py-4'>
-              Project Management and Time Efficiency:{' '}
-            </h2>
+
             <li>
+              <h2 className='text-lg text-flame py-4'>
+                Project Management and Time Efficiency:{' '}
+              </h2>
               <p>
                 Being in charge of both frontend and backend development
                 required effective project management and time efficiency. I
