@@ -11,7 +11,7 @@ function Home() {
             </h1>
 
             <Reveal>
-              <p className='mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400'>
+              <p className='mx-auto max-w-[900px] text-gray-500 md:text-xl dark:text-gray-400'>
                 Full-stack developer & 2nd-year uni student, studying ICT &
                 Cybersecurity & Software Engineering. Proficient in JavaScript
                 and Python. <br />I love solving complex problems and creating

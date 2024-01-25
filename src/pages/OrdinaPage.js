@@ -13,12 +13,20 @@ import Code from '../components/Code';
 import Accordian, { AccordianItem } from '../components/Accordian';
 import {
   json,
+  json10,
+  json11,
+  json12,
+  json13,
+  json14,
+  json15,
   json2,
   json3,
   json4,
   json5,
   json6,
   json7,
+  json8,
+  json9,
 } from '../constants/ordinaData.js';
 
 const OrdinaPage = () => {
@@ -190,14 +198,95 @@ const OrdinaPage = () => {
                 json={json7}
               />
             </AccordianItem>
-            <AccordianItem
-              method='post'
-              value='9'
-              trigger='/offices/'
-            >
-              <Code description={'You can create an office that requires the following body :'}
+            <AccordianItem method='post' value='9' trigger='/offices/'>
+              <Code
+                description={
+                  'You can create an office that requires the following body :'
+                }
+                language='json'
+                json={json8}
+              />
+            </AccordianItem>
+            <AccordianItem method='get' value='10' trigger='/offices/:id'>
+              <Code
+                description={'You get all info of the specified office'}
+                language={'json'}
+                json={json9}
+              />
+            </AccordianItem>
+            <AccordianItem method='patch' value='11' trigger='/offices/:id'>
+              <Code
+                description={
+                  'You update the office with the following body : and get a response of the updated office'
+                }
+                language={'json'}
+                json={json10}
+              />
+            </AccordianItem>
+            <AccordianItem method='delete' value='12' trigger='/offices/:id'>
+              And as a response you get status 200, sucessfully deleted.
             </AccordianItem>
           </Accordian>
+
+          <p className='pt-8 pb-4'>
+            Endpoints for office floor booking based on date
+          </p>
+          <Accordian className='max-w'>
+            <AccordianItem method='get' value='13' trigger='/officeData/:date'>
+              <Code
+                description={
+                  'You get all of the office data for the specified date'
+                }
+                language='json'
+                json={json11}
+              />
+            </AccordianItem>
+            <AccordianItem
+              method='get'
+              value='14'
+              trigger='/officeData/:date/:officeID'
+            >
+              <Code
+                description={
+                  'You get all of the office data for the specified date and office'
+                }
+                language='json'
+                json={json12}
+              />
+            </AccordianItem>
+            <AccordianItem
+              method='patch'
+              value='15'
+              trigger='/officeData/:date/:officeID'
+            >
+              <Code
+                description={
+                  'You add people to an office floor for a specific date and as a return you get a return of all of the floor information'
+                }
+                language='json'
+                json={json13}
+              />
+            </AccordianItem>
+            <AccordianItem
+              method={'delete'}
+              value='16'
+              trigger='/officeData/:date/:officeID'
+            >
+              <Code
+                description={
+                  'Remove people from office for a specific date and as a return you get a return of all of the floor information'
+                }
+                language={'json'}
+                json={json14}
+              />
+            </AccordianItem>
+          </Accordian>
+
+          <p className='pt-8 pb-4'>
+            I have created a function that when called creates the blueprints,
+            without any information for the officeData json.
+          </p>
+          <Code description={null} language='javascript' json={json15} />
         </>
       ),
     },

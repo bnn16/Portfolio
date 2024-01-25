@@ -43,12 +43,12 @@ function Projects() {
     },
 
     {
-      title: 'Library Management System',
+      title: 'Library Management',
       icon: <SiDotnet />,
       id: 'library',
     },
     {
-      title: 'High School Diploma Project',
+      title: 'High School Project',
       icon: <FaReact />,
       id: 'highschool',
     },
