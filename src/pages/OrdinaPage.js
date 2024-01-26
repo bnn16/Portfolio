@@ -97,15 +97,11 @@ const OrdinaPage = () => {
           </p>
 
           <p className='pb-4'>
-            <strong>Endpoints for meetings</strong>
+            <strong>Endpoints for /meetings</strong>
           </p>
 
           <Accordian className='max-w'>
-            <AccordianItem
-              method='get'
-              value='1'
-              trigger={`/meetings/user/:userID`}
-            >
+            <AccordianItem method='get' value='1' trigger={`/user/:uID`}>
               <Code
                 description={
                   'You get a list of all of the meetings in the following format :'
@@ -114,11 +110,7 @@ const OrdinaPage = () => {
                 language={'json'}
               />
             </AccordianItem>
-            <AccordianItem
-              method='get'
-              value='2'
-              trigger={`/meetings/:meetingID`}
-            >
+            <AccordianItem method='get' value='2' trigger={`/:mID`}>
               <Code
                 description={'You get the meeting in the following json'}
                 json={json2}
@@ -134,11 +126,7 @@ const OrdinaPage = () => {
                 language={'json'}
               />
             </AccordianItem>
-            <AccordianItem
-              method='patch'
-              value='4'
-              trigger='/meetings/user/:userID'
-            >
+            <AccordianItem method='patch' value='4' trigger='/user/:uID'>
               <Code
                 description={
                   'A meeting has 3 statuses accepted, declined, pending, You update the given user status for a meeting and get the meeting as a return.'
@@ -148,11 +136,7 @@ const OrdinaPage = () => {
               />
             </AccordianItem>
 
-            <AccordianItem
-              method='patch'
-              value='5'
-              trigger='/meetings/update/:meetingID'
-            >
+            <AccordianItem method='patch' value='5' trigger='/update/:mID'>
               <Code
                 description={
                   'This endpoint automatically changes the statuses to all attendees to pending, and updates the date, start and end time. It has an optional update of location. As a return you get the updated meeting information.'
@@ -161,11 +145,7 @@ const OrdinaPage = () => {
                 json={json5}
               />
             </AccordianItem>
-            <AccordianItem
-              method='patch'
-              value='6'
-              trigger='/meetings/invite/:meetingID'
-            >
+            <AccordianItem method='patch' value='6' trigger='/invite/:mID'>
               <Code
                 language={'json'}
                 json={json6}
@@ -174,22 +154,18 @@ const OrdinaPage = () => {
                 }
               />
             </AccordianItem>
-            <AccordianItem
-              method='delete'
-              value='7'
-              trigger='/meetings/:meetingID'
-            >
+            <AccordianItem method='delete' value='7' trigger='/:mID'>
               If you need to delete a meeting just call this endpoint with the
               meeting id.
             </AccordianItem>
           </Accordian>
 
           <p className='pt-8 pb-4'>
-            <strong>Endpoints for Office creation</strong>
+            <strong>Endpoints for /office</strong>
           </p>
 
           <Accordian className='max-w'>
-            <AccordianItem method='get' value='8' trigger='/offices/'>
+            <AccordianItem method='get' value='8' trigger='/'>
               <Code
                 description={
                   'You get a list of all of the offices in the following format'
@@ -198,7 +174,7 @@ const OrdinaPage = () => {
                 json={json7}
               />
             </AccordianItem>
-            <AccordianItem method='post' value='9' trigger='/offices/'>
+            <AccordianItem method='post' value='9' trigger='/'>
               <Code
                 description={
                   'You can create an office that requires the following body :'
@@ -207,14 +183,14 @@ const OrdinaPage = () => {
                 json={json8}
               />
             </AccordianItem>
-            <AccordianItem method='get' value='10' trigger='/offices/:id'>
+            <AccordianItem method='get' value='10' trigger='/:id'>
               <Code
                 description={'You get all info of the specified office'}
                 language={'json'}
                 json={json9}
               />
             </AccordianItem>
-            <AccordianItem method='patch' value='11' trigger='/offices/:id'>
+            <AccordianItem method='patch' value='11' trigger='/:id'>
               <Code
                 description={
                   'You update the office with the following body : and get a response of the updated office'
@@ -223,16 +199,16 @@ const OrdinaPage = () => {
                 json={json10}
               />
             </AccordianItem>
-            <AccordianItem method='delete' value='12' trigger='/offices/:id'>
+            <AccordianItem method='delete' value='12' trigger='/:id'>
               And as a response you get status 200, sucessfully deleted.
             </AccordianItem>
           </Accordian>
 
           <p className='pt-8 pb-4'>
-            Endpoints for office floor booking based on date
+            Endpoints for <strong>/officeData</strong>
           </p>
           <Accordian className='max-w'>
-            <AccordianItem method='get' value='13' trigger='/officeData/:date'>
+            <AccordianItem method='get' value='13' trigger='/:date'>
               <Code
                 description={
                   'You get all of the office data for the specified date'
@@ -241,11 +217,7 @@ const OrdinaPage = () => {
                 json={json11}
               />
             </AccordianItem>
-            <AccordianItem
-              method='get'
-              value='14'
-              trigger='/officeData/:date/:officeID'
-            >
+            <AccordianItem method='get' value='14' trigger='/:date/:id'>
               <Code
                 description={
                   'You get all of the office data for the specified date and office'
@@ -254,11 +226,7 @@ const OrdinaPage = () => {
                 json={json12}
               />
             </AccordianItem>
-            <AccordianItem
-              method='patch'
-              value='15'
-              trigger='/officeData/:date/:officeID'
-            >
+            <AccordianItem method='patch' value='15' trigger='/:date/:id'>
               <Code
                 description={
                   'You add people to an office floor for a specific date and as a return you get a return of all of the floor information'
@@ -267,11 +235,7 @@ const OrdinaPage = () => {
                 json={json13}
               />
             </AccordianItem>
-            <AccordianItem
-              method={'delete'}
-              value='16'
-              trigger='/officeData/:date/:officeID'
-            >
+            <AccordianItem method={'delete'} value='16' trigger='/:date/:id'>
               <Code
                 description={
                   'Remove people from office for a specific date and as a return you get a return of all of the floor information'

@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useRef, useState } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { ChevronDown } from 'react-feather';
 
 const AccordianContext = createContext();
@@ -41,16 +47,19 @@ export function AccordianItem({ children, value, trigger, method, ...props }) {
       <header
         role='button'
         onClick={() => setSelected(open ? null : value)}
-        className='flex justify-between items-center p-4 font-medium'
+        className='flex justify-between items-center flex-wrap flex-grow p-4 font-medium'
+        style={{ flexShrink: 0, overflow: 'hidden', whiteSpace: 'nowrap' }}
       >
-        <span
-          style={{ backgroundColor: color }}
-          className={`text-sm font-bold uppercase px-2 py-1 rounded-md mr-2`}
-        >
-          {method}
-        </span>
+        <div className='flex items-center'>
+          <span
+            style={{ backgroundColor: color }}
+            className={`text-sm font-bold uppercase px-2 py-1 rounded-md mr-2`}
+          >
+            {method}
+          </span>
 
-        {trigger}
+          {trigger}
+        </div>
         <ChevronDown
           size={16}
           className={`transition-transform ${open ? 'rotate-180' : ''}`}

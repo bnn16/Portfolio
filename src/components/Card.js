@@ -3,12 +3,15 @@ import { motion } from 'framer-motion';
 import PortfolioPage from '../pages/PortfolioPage';
 import OrdinaPage from '../pages/OrdinaPage';
 import YoutubeyPage from '../pages/YoutubeyPage';
+import GrpcPage from '../pages/GrpcPage';
+import { FaWindowClose } from 'react-icons/fa';
+import { X } from 'react-feather';
 
 const components = {
   portfolio: PortfolioPage,
   ordina: OrdinaPage,
   youtubey: YoutubeyPage,
-  // grpc: GrpcPage,
+  grpc: GrpcPage,
   // webscraper: WebscraperPage,
   // eventplatform: EventPlatformPage,
   // library: LibraryPage,
@@ -22,15 +25,24 @@ function Card({ onClick, data }) {
 
   useLockBodyScroll(true);
 
-  const containerStyles =
-    'fixed inset-0 overflow-y-auto min-w-36 flex items-center justify-center bg-deep bg-opacity-0';
-
-  const innerContainerStyles = {
-    width: '100%',
-    maxWidth: '800px', // Set a maximum width as per your design
-    maxHeight: '80vh', // Set a maximum height as per your design
-    overflowY: 'auto',
+  const closeButtonContainerStyles = {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    position: 'sticky',
+    top: '1rem', // Default top position for small screens
   };
+
+  const closeButtonStyles = {
+    cursor: 'pointer',
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+  };
+
+  const containerStyles =
+    'fixed inset-0 overflow-y-auto min-w-20 flex items-center justify-center bg-deep bg-opacity-0';
+
+  const innerContainerClasses =
+    'w-full sm:max-w-2xl md:max-w-4xl lg:max-w-3xl min-w-1/4 max-h-screen overflow-auto';
 
   const animated = {
     layout: 'position',
@@ -54,15 +66,25 @@ function Card({ onClick, data }) {
     >
       <div
         className={
-          'text-justify mt-4 border rounded-lg border-flame-dark border-opacity-80 bg-background-dark p-4'
+          'text-justify mt-12 border relative rounded-lg border-flame-dark border-opacity-80 bg-background-dark p-4 ' +
+          innerContainerClasses
         }
-        style={innerContainerStyles}
         onClick={(e) => e.stopPropagation()} // Prevent clicks inside from triggering the background click
       >
-        <ComponentToRender />
+        <div style={closeButtonContainerStyles} className='sm:sticky lg:static'>
+          <button
+            className='text-xl mr-4 font-bold text-flame hover:text-accent transition-colors duration-200'
+            onClick={onClick}
+            style={closeButtonStyles}
+          >
+            {<X size={24} />}
+          </button>
+        </div>
+        <div className='w-full sm:w-2/3 lg:w-9/12 mx-auto'>
+          <ComponentToRender />
+        </div>
       </div>
     </motion.div>
   );
 }
-
 export default Card;
