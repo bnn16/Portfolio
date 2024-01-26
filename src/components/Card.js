@@ -66,14 +66,14 @@ function Card({ onClick, data }) {
     >
       <div
         className={
-          'text-justify mt-12 border relative rounded-lg border-flame-dark border-opacity-80 bg-background-dark p-4 ' +
+          'text-justify border relative rounded-lg border-flame-dark border-opacity-80 bg-background-dark p-4 ' +
           innerContainerClasses
         }
         onClick={(e) => e.stopPropagation()} // Prevent clicks inside from triggering the background click
       >
         <div style={closeButtonContainerStyles} className='sm:sticky lg:static'>
           <button
-            className='text-xl mr-4 font-bold text-flame hover:text-accent transition-colors duration-200'
+            className='text-xl mt-10 mr-4 font-bold text-flame hover:text-accent transition-colors duration-200'
             onClick={onClick}
             style={closeButtonStyles}
           >

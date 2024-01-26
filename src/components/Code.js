@@ -6,7 +6,7 @@ function Code({ description, language, json }) {
   return (
     <>
       <p>{description}</p>
-      <SyntaxHighlighter language={language} style={twilight} showLineNumbers>
+      <SyntaxHighlighter language={language} style={twilight}>
         {json.trim()}
       </SyntaxHighlighter>
     </>

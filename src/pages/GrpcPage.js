@@ -122,7 +122,7 @@ const GrpcPage = () => {
     },
   ];
 
-  return <Layout title={'Portfolio'} sections={sections} />;
+  return <Layout title={'Microservices'} sections={sections} />;
 };
 
 export default GrpcPage;
