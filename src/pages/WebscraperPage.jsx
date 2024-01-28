@@ -1,27 +1,29 @@
-import Layout from '../components/Layout';
+import React from 'react';
 import { DiPython } from 'react-icons/di';
 import { SiSelenium } from 'react-icons/si';
+import Layout from '../components/Layout';
 
 import captcha from '../img/captcha.jpg';
 import Image from '../components/Image';
 import Icons from '../components/Icons';
 
-const WebscraperPage = () => {
+function WebscraperPage() {
   const sections = [
     {
       title: 'Introduction',
       content: (
-        <p className='mb-4'>
+        <p className="mb-4">
           I wanted to make this project, because I was interested in how my uni
           teacher made his own scraper and crawler. I wanted to make my own
-          version of it. The overall code is not that complex and it's quite
+          version of it. The overall code is not that complex and it`s quite
           easy to understand. I used Selenium and Beautiful Soup to scrape the
           data from the website and model it.
           <br />
           <br />
-          You can find the source code on{' '}
-          <span className='underline'>
-            <a href='https://github.com/bnn16/stackScraper'>here.</a>
+          You can find the source code on
+          {' '}
+          <span className="underline">
+            <a href="https://github.com/bnn16/stackScraper">here.</a>
           </span>
         </p>
       ),
@@ -33,8 +35,8 @@ const WebscraperPage = () => {
           <Icons icons={[<DiPython />, <SiSelenium />]} />
 
           <p>
-            I used Python to make this project, because it's the standart
-            language for scraping and it's quite easy to use. I used Selenium to
+            I used Python to make this project, because it`s the standart
+            language for scraping and it`s quite easy to use. I used Selenium to
             scrape the data from the website and Beautiful Soup to model it.
           </p>
         </>
@@ -43,7 +45,7 @@ const WebscraperPage = () => {
     {
       title: 'Research and Design',
       content: (
-        <div className='flex flex-col flex-grow gap-2'>
+        <div className="flex flex-col flex-grow gap-2">
           <p>
             Initially I had no cliue how to start, so I did some research and
             realised that after a couple of requests the website would block me.
@@ -59,7 +61,7 @@ const WebscraperPage = () => {
           <p>
             I had to find a way to bypass the captcha. I found out that I could
             manually solve the captcha and then use the cookies to bypass it. So
-            I did that, but that wasn't enough. I had to find a way to automate
+            I did that, but that wasn`t enough. I had to find a way to automate
             the process. I found out that I could use a service like 2captcha to
             solve the captcha for me, but I decided to automate it myself. I
             found a library called SeleniumRecaptcha and used it to solve the
@@ -87,7 +89,7 @@ const WebscraperPage = () => {
     {
       title: 'Learning and Growth',
       content: (
-        <div className='flex flex-col flex-grow gap-2'>
+        <div className="flex flex-col flex-grow gap-2">
           <p>
             This is by no means a complex project, but it was quite fun to make.
             I learned what proxys are and how to use them, I learned what
@@ -109,7 +111,7 @@ const WebscraperPage = () => {
         <>
           <p>
             In conclusion, this project which is small and simple, I learned how
-            scraping and crawling works. So I'm quite happy with the result.
+            scraping and crawling works. So I`m quite happy with the result.
           </p>
           <p>
             I hope you enjoyed your visit and my other projects and I look
@@ -120,7 +122,7 @@ const WebscraperPage = () => {
     },
   ];
 
-  return <Layout title={'Web Scraper'} sections={sections} />;
-};
+  return <Layout title="Web Scraper" sections={sections} />;
+}
 
 export default WebscraperPage;

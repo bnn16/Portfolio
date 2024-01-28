@@ -1,5 +1,6 @@
-import Layout from '../components/Layout';
+import React from 'react';
 import { SiCsharp, SiMysql } from 'react-icons/si';
+import Layout from '../components/Layout';
 
 import strategy from '../img/event/strategy.png';
 import grades from '../img/event/grades.png';
@@ -8,14 +9,16 @@ import Icons from '../components/Icons';
 import Code from '../components/Code';
 import { jsonc } from '../constants/events';
 
-const EventPlatformPage = () => {
+function EventPlatformPage() {
   const sections = [
     {
       title: 'Introduction',
       content: (
-        <p className='mb-4'>
+        <p className="mb-4">
           This was the first ever project that I made with object oriented
-          programming. <br /> <br />
+          programming.
+          <br />
+          <br />
           The main goal of the website is to create easy to use and a
           minimalistic experience. You want to attend an event, then you go on
           the website and get your tickets. Easy, simple and reliable. The event
@@ -34,20 +37,21 @@ const EventPlatformPage = () => {
           presentation layer.
           <br />
           <br />
-          You can find the source code on{' '}
-          <span className='underline'>
-            <a href='https://github.com/bnn16/event-platform'>here.</a>
+          You can find the source code on
+          {' '}
+          <span className="underline">
+            <a href="https://github.com/bnn16/event-platform">here.</a>
           </span>
           <br />
           <span>Here is a demo of the project.</span>
           <iframe
-            className='w-full h-96 rounded-lg shadow-lg border-2 border-flame-dark border-opacity-80 my-4'
-            src='https://www.youtube.com/embed/o9IH9wpztOw?si=PZON0FzqRw-mSZi2'
-            title='YouTube video player'
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            className="w-full h-96 rounded-lg shadow-lg border-2 border-flame-dark border-opacity-80 my-4"
+            src="https://www.youtube.com/embed/o9IH9wpztOw?si=PZON0FzqRw-mSZi2"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-          ></iframe>
+          />
         </p>
       ),
     },
@@ -65,7 +69,7 @@ const EventPlatformPage = () => {
             DAL (Data Access Layer).
           </p>
           <p>
-            The architecture is monolithic, because that's what we were taught.
+            The architecture is monolithic, because that`s what we were taught.
             We had 3 layers. The data layer (DAL), the business layer (BLL) and
             the presentation layer (PL).
           </p>
@@ -75,17 +79,18 @@ const EventPlatformPage = () => {
     {
       title: 'Research and Design',
       content: (
-        <div className='flex flex-col flex-grow gap-2'>
+        <div className="flex flex-col flex-grow gap-2">
           <p>
             This being my first project with object oriented programming, I had
             to learn more about design patterns, so I can make quality OOP code.
           </p>
 
           <p>
-            For this project I decided after some time to stick with the{' '}
+            For this project I decided after some time to stick with the
+            {' '}
             <a
-              className='underline'
-              href='https://www.blackwasp.co.uk/Strategy.aspx'
+              className="underline"
+              href="https://www.blackwasp.co.uk/Strategy.aspx"
             >
               Strategy Design pattern.
             </a>
@@ -101,17 +106,17 @@ const EventPlatformPage = () => {
             I also had to make an algorithm, that would rank the events based on
             the % of similar tags that you have. So if you have 3 tags in common
             with an event, then that event will be ranked higher than an event
-            that has only 1 tag in common with you. And I'm very proud of the
+            that has only 1 tag in common with you. And I`m very proud of the
             algorithm I came up with.
           </p>
-          <Code description='Algorithm code' language='csharp' json={jsonc} />
+          <Code description="Algorithm code" language="csharp" json={jsonc} />
         </div>
       ),
     },
     {
       title: 'Learning and Growth',
       content: (
-        <div className='flex flex-col flex-grow gap-2'>
+        <div className="flex flex-col flex-grow gap-2">
           <p>
             This was my first project with object oriented programming, that is
             also a full stack project. So I had to learn a lot of new things.
@@ -121,7 +126,7 @@ const EventPlatformPage = () => {
           <p>
             The biggest challange was to design and research the architecture of
             this project. The most difficult part was to make the algorithm that
-            ranks the events based on the % of similar tags that you have. I'm
+            ranks the events based on the % of similar tags that you have. I`m
             very proud of the algorithm I came up with.
           </p>
         </div>
@@ -132,7 +137,7 @@ const EventPlatformPage = () => {
       content: (
         <>
           <p>
-            The app is by no means perfect, but I'm quite happy with the result,
+            The app is by no means perfect, but I`m quite happy with the result,
             as for a 1st year university student, I think I did a pretty good
             job, my grades were also perfect.
           </p>
@@ -146,7 +151,7 @@ const EventPlatformPage = () => {
     },
   ];
 
-  return <Layout title={'Event Platform'} sections={sections} />;
-};
+  return <Layout title="Event Platform" sections={sections} />;
+}
 
 export default EventPlatformPage;

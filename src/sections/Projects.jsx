@@ -16,7 +16,8 @@ function Projects({ setOpen }) {
 
   const handleMiniCardClick = (index) => {
     setOpen(true);
-    window.scrollTo(0, document.body.scrollHeight);
+    const scrollingElement = (document.scrollingElement || document.body);
+    scrollingElement.scrollTop = scrollingElement.scrollHeight;
     setExpandedIndex(index);
   };
 

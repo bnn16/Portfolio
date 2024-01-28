@@ -1,14 +1,13 @@
-import Layout from '../components/Layout';
+import React from 'react';
 import {
-  DiFirebase,
   DiJava,
-  DiMongodb,
   DiPython,
   DiReact,
 } from 'react-icons/di';
 import { SiTailwindcss } from 'react-icons/si';
-import Icons from '../components/Icons';
 import { FaNodeJs } from 'react-icons/fa';
+import Icons from '../components/Icons';
+import Layout from '../components/Layout';
 import Image from '../components/Image';
 import architecture from '../img/youtubey/architecture.png';
 import micro from '../img/youtubey/micro.png';
@@ -20,22 +19,20 @@ import closed from '../img/youtubey/closed.png';
 import postinfo from '../img/youtubey/postinfo.png';
 import profileedit from '../img/youtubey/profileedit.png';
 
-const YoutubeyPage = () => {
+function YoutubeyPage() {
   const sections = [
     {
       title: 'Introduction',
       content: (
-        <>
-          <p className='mb-4'>
-            In today's digital age, content creators on platforms like YouTube
-            often collaborate with editors to enhance the quality of their
-            videos. However, many content creators are hesitant to share their
-            YouTube/Google account credentials with remote editors they hire
-            from the internet. This project aims to address this issue by
-            developing a secure and efficient platform for content creators and
-            video editors.
-          </p>
-        </>
+        <p className="mb-4">
+          In today`s digital age, content creators on platforms like YouTube
+          often collaborate with editors to enhance the quality of their
+          videos. However, many content creators are hesitant to share their
+          YouTube/Google account credentials with remote editors they hire
+          from the internet. This project aims to address this issue by
+          developing a secure and efficient platform for content creators and
+          video editors.
+        </p>
       ),
     },
     {
@@ -53,10 +50,11 @@ const YoutubeyPage = () => {
           />
           <p>
             You can checkout the git repository for more information about code
-            and api endpoints{' '}
+            and api endpoints
+            {' '}
             <a
-              className='underline'
-              href='https://github.com/bnn16/YoutubeyAPIs'
+              className="underline"
+              href="https://github.com/bnn16/YoutubeyAPIs"
             >
               here.
             </a>
@@ -64,17 +62,21 @@ const YoutubeyPage = () => {
           <br />
 
           <p>
-            <span className='bold'>Frontend Technology</span>
-            <br /> The frontend of the YouTubey app will be developed using
+            <span className="bold">Frontend Technology</span>
+            <br />
+            {' '}
+            The frontend of the YouTubey app will be developed using
             ReactJS. ReactJS is a robust and popular JavaScript library for
             building user interfaces, ensuring a modern and responsive user
             experience. Leveraging ReactJS will enable the creation of an
             intuitive and user-friendly interface for content creators and
             editors.
           </p>
-          <p className='py-4'>
-            <span className='bold'>Backend Technology</span> <br />
-            The choice of backend technology is pivotal for the app's
+          <p className="py-4">
+            <span className="bold">Backend Technology</span>
+            {' '}
+            <br />
+            The choice of backend technology is pivotal for the app`s
             performance and scalability. Currently, I opted to creating micro
             services, each serving its own purpose for the app. Java for
             authentication and authorization. NodeJS for web sockets (socket.io)
@@ -82,11 +84,11 @@ const YoutubeyPage = () => {
             YouTube api.
           </p>
 
-          <p className='bold text-lg'>Architecture</p>
+          <p className="bold text-lg">Architecture</p>
           <Image imgsrc={architecture} />
 
-          <p className='py-4'>
-            <span className='bold'>
+          <p className="py-4">
+            <span className="bold">
               Container 1: Upload Microservice with MySQL Database
             </span>
             <br />
@@ -95,8 +97,8 @@ const YoutubeyPage = () => {
             data.
           </p>
 
-          <p className='py-4'>
-            <span className='bold'>
+          <p className="py-4">
+            <span className="bold">
               Container 2: Communication Microservice with Database
             </span>
             <br />
@@ -104,8 +106,8 @@ const YoutubeyPage = () => {
             each other via messages and other forms of communication.
           </p>
 
-          <p className='py-4'>
-            <span className='bold'>
+          <p className="py-4">
+            <span className="bold">
               Container 3: Authentication and Authorization Microservice with
               MongoDB and Google Firebase
             </span>
@@ -114,7 +116,7 @@ const YoutubeyPage = () => {
             authorization to ensure secure access to the YouTubey platform.
           </p>
 
-          <h2 className='text-lg py-4'>Layers</h2>
+          <h2 className="text-lg py-4">Layers</h2>
 
           <p>
             A three-layered architecture, which typically consists of a
@@ -124,23 +126,29 @@ const YoutubeyPage = () => {
             are several reasons why I chose this approach:
           </p>
 
-          <ul class='list-decimal py-4 space-y-4'>
+          <ul className="list-decimal py-4 space-y-4">
             <li>
-              Separation of Concerns: <br />
+              Separation of Concerns:
+              {' '}
+              <br />
               The Service layer helps in separating business logic from the
               presentation layer (Controller) and the data access layer
               (Repository). This promotes a cleaner and more modular design,
               making the codebase easier to understand, maintain, and extend.
             </li>
             <li>
-              Reusability <br />
+              Reusability
+              {' '}
+              <br />
               Business logic encapsulated within the Service layer is more
               reusable. Other parts of the application or even other
               applications can reuse the services ( in the future ), promoting a
               more modular and scalable system.
             </li>
             <li>
-              Testibility <br />
+              Testibility
+              {' '}
+              <br />
               Services are standalone units of business logic that can be easily
               tested in isolation. This promotes unit testing and ensures that
               each component of the system functions correctly independently of
@@ -148,7 +156,7 @@ const YoutubeyPage = () => {
             </li>
           </ul>
 
-          <p className='py-4'>
+          <p className="py-4">
             In summary, the Service layer in a three-layered architecture
             provides a structured and organized way to manage business logic,
             promoting code maintainability, reusability, and testability. It
@@ -156,7 +164,7 @@ const YoutubeyPage = () => {
             system more flexible and adaptable to changes.
           </p>
 
-          <p className='py-4'>
+          <p className="py-4">
             However the more interesting part comes in the actual architecture
             of the other api’s and how they’re used. The following diagram is
             the part of the Python API. It’s a functional API, unlike the one
@@ -167,7 +175,7 @@ const YoutubeyPage = () => {
 
           <Image imgsrc={micro} />
 
-          <h2 className='text-lg'>Microservices Interaction Overview</h2>
+          <h2 className="text-lg">Microservices Interaction Overview</h2>
           <p>
             The fundamental architecture of this application revolves around a
             microservices design that facilitates seamless communication between
@@ -175,16 +183,22 @@ const YoutubeyPage = () => {
             when a user initiates the process of uploading a video through a
             well-defined API gateway.
           </p>
-          <ul class='list-decimal py-4 space-y-4'>
+          <ul className="list-decimal py-4 space-y-4">
             <li>
-              User Request: <br />{' '}
+              User Request:
+              {' '}
+              <br />
+              {' '}
               <p>
-                Upon a user's request to upload a video, the API gateway is
+                Upon a user`s request to upload a video, the API gateway is
                 engaged to handle the incoming request.
               </p>
             </li>
             <li>
-              Post Controller in Spring Microservice: <br />{' '}
+              Post Controller in Spring Microservice:
+              {' '}
+              <br />
+              {' '}
               <p>
                 The API gateway directs the request to the Post Controller, an
                 integral component within the Spring Microservice. Within this
@@ -195,7 +209,9 @@ const YoutubeyPage = () => {
               </p>
             </li>
             <li>
-              Integration with Python Microservice: <br />
+              Integration with Python Microservice:
+              {' '}
+              <br />
               <p>
                 Following the successful creation of the post, the system
                 initiates a subsequent request to the Python Microservice. The
@@ -208,10 +224,12 @@ const YoutubeyPage = () => {
               </p>
             </li>
             <li>
-              User Response: <br />
+              User Response:
+              {' '}
+              <br />
               <p>
                 The final step involves the Python Microservice returning the
-                Video URL to the user. This completes the user's request and
+                Video URL to the user. This completes the user`s request and
                 establishes a cohesive flow between the Spring and Python
                 microservices.
               </p>
@@ -230,8 +248,8 @@ const YoutubeyPage = () => {
     {
       title: 'Design',
       content: (
-        <div className='flex flex-col flex-grow gap-2'>
-          <p className='text-lg'>SPA</p>
+        <div className="flex flex-col flex-grow gap-2">
+          <p className="text-lg">SPA</p>
           <p>
             I opted to create a SPA (Single Page application), that uses React
             Router to handle the routing. This allows for a more fluid user
@@ -240,7 +258,9 @@ const YoutubeyPage = () => {
           </p>
           <p>
             Initially the design was going to be a dark theme, but I decided to
-            go with a light theme instead. <br />
+            go with a light theme instead.
+            {' '}
+            <br />
             The color pallette was inspired by the colors of the YouTube logo.
           </p>
           <Image imgsrc={home} />
@@ -261,26 +281,30 @@ const YoutubeyPage = () => {
 
           <p>
             Also the dashboard is made with animations that when its open and
-            closed. When it's hovored it creates a toaster menu
+            closed. When it`s hovored it creates a toaster menu
           </p>
           <Image imgsrc={closed} />
-          <p className='text-lg'>Color Palette</p>
-          <ul className='list-disc'>
+          <p className="text-lg">Color Palette</p>
+          <ul className="list-disc">
             <li>
-              <span style={{ color: '#EF4444' }}>#EF4444:</span> Grabs attention
+              <span style={{ color: '#EF4444' }}>#EF4444:</span>
+              {' '}
+              Grabs attention
               with a bold and vibrant red hue.
             </li>
             <li>
-              <span className='' style={{ color: '#0E0E0E' }}>
+              <span className="" style={{ color: '#0E0E0E' }}>
                 #0E0E0E:
-              </span>{' '}
+              </span>
+              {' '}
               Provides a dark background, enhancing visual elements and creating
               contrast for readability.
             </li>
             <li>
-              <span className='text-background-light' style={{ color: '#fff' }}>
+              <span className="text-background-light" style={{ color: '#fff' }}>
                 #FFFFFF:
-              </span>{' '}
+              </span>
+              {' '}
               Offers a clean and bright palette, ensuring clarity and
               readability.
             </li>
@@ -296,17 +320,19 @@ const YoutubeyPage = () => {
     {
       title: 'Learning and Growth',
       content: (
-        <div className='flex flex-col flex-grow gap-2'>
+        <div className="flex flex-col flex-grow gap-2">
           <p>
             Throughout the duration of this project, I embarked on a significant
             learning journey that not only enhanced my understanding of design
             principles but also provided me with valuable insights into the
             intricate world of API architecture and design.
           </p>
-          <ul className='list-decimal'>
+          <ul className="list-decimal">
             <li>
-              Design Proficiency: <br />
-              Delving into the project's design aspects allowed me to hone my
+              Design Proficiency:
+              {' '}
+              <br />
+              Delving into the project`s design aspects allowed me to hone my
               skills in creating aesthetically pleasing and user-friendly
               interfaces. I gained a deeper appreciation for the importance of
               user experience and how thoughtful design contributes to overall
@@ -339,7 +365,7 @@ const YoutubeyPage = () => {
           <p>
             The biggest challange was to figure out a way to upload videos to
             google firebase and youtube api. I had to learn how to use python
-            and integrate it with the rest of the api's. I also had to learn how
+            and integrate it with the rest of the api`s. I also had to learn how
             to use websockets to create a chat feature.
           </p>
         </div>
@@ -365,7 +391,7 @@ const YoutubeyPage = () => {
     },
   ];
 
-  return <Layout title={'Youtubey'} sections={sections} />;
-};
+  return <Layout title="Youtubey" sections={sections} />;
+}
 
 export default YoutubeyPage;

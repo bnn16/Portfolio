@@ -1,32 +1,36 @@
+import React from 'react';
+import { DiGo } from 'react-icons/di';
+import { SiRabbitmq } from 'react-icons/si';
 import Layout from '../components/Layout';
-import { DiGo, DiReact } from 'react-icons/di';
-import { SiGithubpages, SiRabbitmq, SiTailwindcss } from 'react-icons/si';
 import Icons from '../components/Icons';
 import Image from '../components/Image';
 import init from '../img/grpc/init.png';
 import after from '../img/grpc/after.png';
 import final from '../img/grpc/final.png';
 
-const GrpcPage = () => {
+function GrpcPage() {
   const sections = [
     {
       title: 'Introduction',
       content: (
-        <p className='mb-4'>
+        <p className="mb-4">
           I undertook this project with a clear objective in mind — to challenge
           myself and delve into the realms of microservice architecture using
           Golang, gRPC, RabbitMQ, and SQLite, despite having no prior knowledge
           in these technologies. The ambitious goal was to construct a
           functional microservice architecture within a tight timeframe of 24
-          hours. It's a simple application that allows users to create, read,
-          update, and delete (CRUD) messages. <br />
+          hours. It`s a simple application that allows users to create, read,
+          update, and delete (CRUD) messages.
+          {' '}
+          <br />
           The messages are stored in a SQLite database and the communication
           between the services is done with gRPC and RabbitMQ.
           <br />
           <br />
-          You can find the source code on{' '}
-          <span className='underline'>
-            <a href='https://github.com/bnn16/go-microservice'>here.</a>
+          You can find the source code on
+          {' '}
+          <span className="underline">
+            <a href="https://github.com/bnn16/go-microservice">here.</a>
           </span>
         </p>
       ),
@@ -48,7 +52,7 @@ const GrpcPage = () => {
     {
       title: 'Design',
       content: (
-        <div className='flex flex-col flex-grow gap-2'>
+        <div className="flex flex-col flex-grow gap-2">
           <p>
             Initially i had no cliue how to start, so I did some research and
             came up with the following diagram:
@@ -58,10 +62,13 @@ const GrpcPage = () => {
             A user sends a request to a rest api that invokes a gRPC. However
             that was a mistake, since the idea of the project was to be async,
             instead of directly calling the method from the restapi. Another
-            thing I couldn't figure out was what comes first after the restapi.
+            thing I couldn`t figure out was what comes first after the restapi.
             <br />
-            Was it the gRPC or the queue? <br /> <br />I was thinking of a
-            queue, but I didn't know how to implement it. So I decided to start
+            Was it the gRPC or the queue?
+            <br />
+            <br />
+            I was thinking of a
+            queue, but I didn`t know how to implement it. So I decided to start
             with the restapi and the gRPC, and then figure out the queue.
           </p>
           <p>
@@ -72,9 +79,10 @@ const GrpcPage = () => {
           <Image imgsrc={after} />
 
           <p>
-            I had to change the diagram again, because I couldn't figure out how
+            I had to change the diagram again, because I couldn`t figure out how
             the grpc would know which service to call. So I added a corelationID
-            to the queue and a corelationID to the grpc. <br />
+            to the queue and a corelationID to the grpc.
+            <br />
             So the diagram ended up like this:
           </p>
           <Image imgsrc={final} />
@@ -84,7 +92,7 @@ const GrpcPage = () => {
     {
       title: 'Learning and Growth',
       content: (
-        <div className='flex flex-col flex-grow gap-2'>
+        <div className="flex flex-col flex-grow gap-2">
           <p>
             This project encapsulates my journey of embracing challenges and
             learning new technologies to construct a microservice architecture
@@ -122,7 +130,7 @@ const GrpcPage = () => {
     },
   ];
 
-  return <Layout title={'Microservices'} sections={sections} />;
-};
+  return <Layout title="Microservices" sections={sections} />;
+}
 
 export default GrpcPage;

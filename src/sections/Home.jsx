@@ -1,6 +1,5 @@
 import React from 'react';
 import Reveal from '../components/Reveal';
-import ScrollTo from '../helpers/ScrollTo';
 
 function Home() {
   return (
@@ -31,7 +30,8 @@ function Home() {
               <button
                 type="button"
                 onClick={() => {
-                  ScrollTo('#contact');
+                  const element = document.getElementById('contact');
+                  element.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="btn btn-primary bg-flame text-accent py-4 px-4 rounded hover:bg-flame-dark"
               >
