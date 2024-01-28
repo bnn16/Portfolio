@@ -3,15 +3,18 @@ import Header from './sections/Header';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
+import { useState } from 'react';
 
 function App() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className='bg-deep text-accent'>
       <Header />
       <Home />
       <Experience />
-      <Projects />
-      <Contact />
+      <Projects setOpen={setOpen} />
+      {open ? null : <Contact />}
     </div>
   );
 }

@@ -8,7 +8,7 @@ import Card from '../components/Card';
 import Modal from '../components/Modal';
 import MiniCard from '../components/MiniCard';
 
-function Projects() {
+function Projects({ setOpen }) {
   const projectData = [
     {
       title: 'Portfolio',
@@ -50,11 +50,13 @@ function Projects() {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   const handleMiniCardClick = (index) => {
+    setOpen(true);
     window.scrollTo(0, document.body.scrollHeight);
     setExpandedIndex(index);
   };
 
   const handleCardClose = () => {
+    setOpen(false);
     setExpandedIndex(null);
   };
 
