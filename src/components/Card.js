@@ -53,11 +53,11 @@ function Card({ onClick, data }) {
 
   // Combine styles based on screen width
   const containerStyles = `fixed inset-0 overflow-y-auto min-w-20 flex items-center justify-center bg-deep bg-opacity-0 ${
-    window.innerWidth < 600 ? containerStylesMobile : ''
+    window.innerWidth < 801 ? containerStylesMobile : ''
   }`;
 
   const innerContainerClasses = `w-full sm:max-w-2xl md:max-w-4xl lg:max-w-3xl min-w-1/4 max-h-screen overflow-auto ${
-    window.innerWidth < 600 ? innerContainerClassesMobile : ''
+    window.innerWidth < 801 ? innerContainerClassesMobile : ''
   }`;
   const animated = {
     layout: 'position',
