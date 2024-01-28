@@ -2,7 +2,6 @@
 import React, {
   createContext,
   useContext,
-  useEffect,
   useMemo,
   useRef,
   useState,
@@ -13,13 +12,9 @@ import PropTypes from 'prop-types';
 const AccordianContext = createContext();
 
 export default function Accordian({
-  children, value, onChange, props,
+  children, props,
 }) {
-  const [selected, setSelected] = useState(value);
-
-  useEffect(() => {
-    onChange?.(selected);
-  }, [selected]);
+  const [selected, setSelected] = useState(null);
 
   const contextValue = useMemo(() => ({ selected, setSelected }), [selected, setSelected]);
 
@@ -34,8 +29,6 @@ export default function Accordian({
 
 Accordian.propTypes = {
   children: PropTypes.node.isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
   props: PropTypes.object.isRequired,
 };
 
