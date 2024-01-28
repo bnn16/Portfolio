@@ -1,6 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { twilight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import PropTypes from 'prop-types';
 
 function Code({ description, language, json }) {
   return (
@@ -12,5 +13,11 @@ function Code({ description, language, json }) {
     </>
   );
 }
+
+Code.propTypes = {
+  description: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  json: PropTypes.string.isRequired,
+};
 
 export default Code;

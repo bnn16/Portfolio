@@ -1,15 +1,19 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import { X } from 'react-feather';
 import { motion } from 'framer-motion';
 import useLockBodyScroll from '@custom-react-hooks/use-lock-body-scroll';
+import PropTypes from 'prop-types';
+
+// Pages
 import PortfolioPage from '../pages/PortfolioPage';
 import OrdinaPage from '../pages/OrdinaPage';
 import YoutubeyPage from '../pages/YoutubeyPage';
 import GrpcPage from '../pages/GrpcPage';
 import WebscraperPage from '../pages/WebscraperPage';
 import EventPlatformPage from '../pages/EventPlatformPage';
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 
+// Map the id's to the pages
 const components = {
   portfolio: PortfolioPage,
   ordina: OrdinaPage,
@@ -20,28 +24,15 @@ const components = {
 };
 
 function Card({ onClick, data }) {
-  const id = data.id;
+  const { id } = data;
   const ComponentToRender = components[id];
 
   useLockBodyScroll(true);
 
-  // Additional styles for mobile responsiveness
-  const containerStylesMobile = {
-    top: 0,
-    paddingTop: '4rem',
-  };
+  const containerStyles = window.innerWidth < 600 ? 'top-0 pt-16' : '';
 
-  const innerContainerClassesMobile =
-    'w-full min-w-full max-h-screen overflow-auto';
+  const innerContainerClasses = window.innerWidth < 600 ? 'w-full min-w-full max-h-screen overflow-auto' : '';
 
-  // Combine styles based on screen width
-  const containerStyles = `fixed inset-0 overflow-y-auto min-w-20 flex items-center justify-center bg-deep bg-opacity-0 ${
-    window.innerWidth < 600 ? containerStylesMobile : ''
-  }`;
-
-  const innerContainerClasses = `w-full sm:max-w-2xl md:max-w-4xl lg:max-w-3xl min-w-1/4 max-h-screen overflow-auto ${
-    window.innerWidth < 600 ? innerContainerClassesMobile : ''
-  }`;
   const animated = {
     layout: 'position',
     animate: { opacity: 1, scale: 1.1 },
@@ -57,32 +48,45 @@ function Card({ onClick, data }) {
 
   return (
     <motion.div
-      {...animated}
-      className={containerStyles}
-      layout
+      className={`fixed cursor-pointer inset-0 overflow-y-auto min-w-20 flex items-center justify-center bg-deep bg-opacity-0 ${containerStyles}`}
+      layout={animated.layout}
+      animate={animated.animate}
+      transition={animated.transition}
+      initial={animated.initial}
       onClick={handleBackgroundClick}
     >
       <div
         className={
-          'text-justify border relative rounded-lg border-flame-dark border-opacity-80 bg-background-dark p-4 ' +
-          innerContainerClasses
+          `cursor-default text-justify border relative rounded-lg border-flame-dark border-opacity-80 bg-background-dark p-4 w-full sm:max-w-2xl md:max-w-4xl lg:max-w-3xl min-w-1/4 max-h-screen overflow-auto ${innerContainerClasses}`
         }
-        onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') {
+            onClick();
+          }
+        }}
+        role="button"
+        tabIndex={0}
       >
-        {/* X button */}
         <button
+          type="button"
           onClick={onClick}
-          className='absolute top-12 right-8 text-flame-dark cursor-pointer'
+          className="absolute top-12 right-8 text-flame-dark cursor-pointer"
           style={{ position: 'fixed' }}
+          aria-label="Close"
         >
           <X size={24} />
         </button>
-        <div className='w-full my-auto sm:w-2/3 lg:w-9/12 mx-auto'>
+        <div className="w-full my-auto sm:w-2/3 lg:w-9/12 mx-auto">
           <ComponentToRender />
         </div>
       </div>
     </motion.div>
   );
 }
+
+Card.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired,
+};
 
 export default Card;

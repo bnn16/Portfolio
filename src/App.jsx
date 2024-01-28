@@ -1,16 +1,15 @@
+import React, { useState } from 'react';
 import Home from './sections/Home';
 import Header from './sections/Header';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
-import { useState } from 'react';
 
 function App() {
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   return (
-    <div className='bg-deep text-accent'>
+    <div className="bg-deep text-accent">
       <Header />
       <Home />
       <Experience />

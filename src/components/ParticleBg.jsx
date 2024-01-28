@@ -16,11 +16,14 @@ function ParticleBg() {
   }, []);
 
   return (
+    init
+    && (
     <Particles
-      className='absolute top-0 left-0 w-full h-full z-0'
-      id='tsparticles'
+      className="absolute top-0 left-0 w-full h-full z-0"
+      id="tsparticles"
       options={particles}
     />
+    )
   );
 }
 
