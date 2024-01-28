@@ -4,15 +4,15 @@ import PortfolioPage from '../pages/PortfolioPage';
 import OrdinaPage from '../pages/OrdinaPage';
 import YoutubeyPage from '../pages/YoutubeyPage';
 import GrpcPage from '../pages/GrpcPage';
-import { FaWindowClose } from 'react-icons/fa';
 import { X } from 'react-feather';
+import WebscraperPage from '../pages/WebscraperPage';
 
 const components = {
   portfolio: PortfolioPage,
   ordina: OrdinaPage,
   youtubey: YoutubeyPage,
   grpc: GrpcPage,
-  // webscraper: WebscraperPage,
+  webscraper: WebscraperPage,
   // eventplatform: EventPlatformPage,
   // library: LibraryPage,
   // highschool: HighSchoolPage,
