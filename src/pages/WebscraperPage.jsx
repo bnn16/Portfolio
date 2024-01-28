@@ -1,8 +1,9 @@
 import React from 'react';
+// Components
 import { DiPython } from 'react-icons/di';
 import { SiSelenium } from 'react-icons/si';
 import Layout from '../components/Layout';
-
+// Images
 import captcha from '../img/captcha.jpg';
 import Image from '../components/Image';
 import Icons from '../components/Icons';

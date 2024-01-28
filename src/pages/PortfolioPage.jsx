@@ -1,4 +1,5 @@
 import React from 'react';
+// Components
 import { DiReact } from 'react-icons/di';
 import { SiGithubpages, SiTailwindcss } from 'react-icons/si';
 import Layout from '../components/Layout';

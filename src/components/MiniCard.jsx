@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 function MiniCard({
   isExpanded, onClick, title, icon,
 }) {
+  const [iconColor, setIconColor] = useState('#fff');
+
+  const controls = useAnimation();
+
   const animated = {
     layout: 'position',
     animate: { opacity: 1, scale: isExpanded ? 0 : 1 },
@@ -12,9 +16,9 @@ function MiniCard({
     initial: { opacity: 0, scale: 1 },
   };
 
-  const [iconColor, setIconColor] = useState('#fff');
-
-  const controls = useAnimation();
+  useEffect(() => {
+    controls.start({ color: iconColor });
+  }, [iconColor, controls]);
 
   const onHoverStart = () => {
     setIconColor('#EB5E28');
@@ -23,10 +27,6 @@ function MiniCard({
   const onHoverEnd = () => {
     setIconColor('#fff');
   };
-
-  useEffect(() => {
-    controls.start({ color: iconColor });
-  }, [iconColor, controls]);
 
   return (
     <motion.div

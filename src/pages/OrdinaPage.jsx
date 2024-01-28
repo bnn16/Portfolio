@@ -1,34 +1,21 @@
 import React from 'react';
+// Components
 import { DiMongodb, DiNodejs, DiReact } from 'react-icons/di';
 import { SiTailwindcss } from 'react-icons/si';
 import Layout from '../components/Layout';
+import Image from '../components/Image';
+import Icons from '../components/Icons';
+import Code from '../components/Code';
+import Accordian, { AccordianItem } from '../components/Accordian';
+// Images
 import ord from '../img/ordina/ordina.png';
 import initial from '../img/ordina/initial.png';
 import home from '../img/ordina/home.png';
 import checkin from '../img/ordina/checkin.png';
 import ms from '../img/ordina/ms.png';
 import ms2 from '../img/ordina/ms2.png';
-import Image from '../components/Image';
-import Icons from '../components/Icons';
-import Code from '../components/Code';
-import Accordian, { AccordianItem } from '../components/Accordian';
-import {
-  json,
-  json10,
-  json11,
-  json12,
-  json13,
-  json14,
-  json15,
-  json2,
-  json3,
-  json4,
-  json5,
-  json6,
-  json7,
-  json8,
-  json9,
-} from '../constants/ordinaData';
+// Snippets
+import allSnippets from '../snippets/ordinaJsonSnippets.mjs';
 
 function OrdinaPage() {
   const sections = [
@@ -110,28 +97,28 @@ function OrdinaPage() {
             <AccordianItem method="get" value="1" trigger="/user/:uID">
               <Code
                 description="You get a list of all of the meetings in the following format :"
-                json={json}
+                json={allSnippets.getUserID}
                 language="json"
               />
             </AccordianItem>
             <AccordianItem method="get" value="2" trigger="/:mID">
               <Code
                 description="You get the meeting in the following json"
-                json={json2}
+                json={allSnippets.getMeetingID}
                 language="json"
               />
             </AccordianItem>
             <AccordianItem method="post" value="3" trigger="/meetings/">
               <Code
                 description="You create a meeting via sending the example json to the endpoint and you get a meeting with the attendees, having a status of pending"
-                json={json3}
+                json={allSnippets.postMeetings}
                 language="json"
               />
             </AccordianItem>
             <AccordianItem method="patch" value="4" trigger="/user/:uID">
               <Code
                 description="A meeting has 3 statuses accepted, declined, pending, You update the given user status for a meeting and get the meeting as a return."
-                json={json4}
+                json={allSnippets.patchUserID}
                 language="json"
               />
             </AccordianItem>
@@ -140,13 +127,13 @@ function OrdinaPage() {
               <Code
                 description="This endpoint automatically changes the statuses to all attendees to pending, and updates the date, start and end time. It has an optional update of location. As a return you get the updated meeting information."
                 language="json"
-                json={json5}
+                json={allSnippets.patchMeeting}
               />
             </AccordianItem>
             <AccordianItem method="patch" value="6" trigger="/invite/:mID">
               <Code
                 language="json"
-                json={json6}
+                json={allSnippets.patchInvite}
                 description="This endpoint checks if the user is already inside of the meeting, if it`s not inside of the meeting it successfully adds him to the meeting"
               />
             </AccordianItem>
@@ -165,28 +152,28 @@ function OrdinaPage() {
               <Code
                 description="You get a list of all of the offices in the following format"
                 language="json"
-                json={json7}
+                json={allSnippets.getOffice}
               />
             </AccordianItem>
             <AccordianItem method="post" value="9" trigger="/">
               <Code
                 description="You can create an office that requires the following body :"
                 language="json"
-                json={json8}
+                json={allSnippets.postOffice}
               />
             </AccordianItem>
             <AccordianItem method="get" value="10" trigger="/:id">
               <Code
                 description="You get all info of the specified office"
                 language="json"
-                json={json9}
+                json={allSnippets.getOfficeID}
               />
             </AccordianItem>
             <AccordianItem method="patch" value="11" trigger="/:id">
               <Code
                 description="You update the office with the following body : and get a response of the updated office"
                 language="json"
-                json={json10}
+                json={allSnippets.patchOfficeID}
               />
             </AccordianItem>
             <AccordianItem method="delete" value="12" trigger="/:id">
@@ -204,28 +191,28 @@ function OrdinaPage() {
               <Code
                 description="You get all of the office data for the specified date"
                 language="json"
-                json={json11}
+                json={allSnippets.getOfficeData}
               />
             </AccordianItem>
             <AccordianItem method="get" value="14" trigger="/:date/:id">
               <Code
                 description="You get all of the office data for the specified date and office"
                 language="json"
-                json={json12}
+                json={allSnippets.getOfficeDataById}
               />
             </AccordianItem>
             <AccordianItem method="patch" value="15" trigger="/:date/:id">
               <Code
                 description="You add people to an office floor for a specific date and as a return you get a return of all of the floor information"
                 language="json"
-                json={json13}
+                json={allSnippets.patchOfficeDateByID}
               />
             </AccordianItem>
             <AccordianItem method="delete" value="16" trigger="/:date/:id">
               <Code
                 description="Remove people from office for a specific date and as a return you get a return of all of the floor information"
                 language="json"
-                json={json14}
+                json={allSnippets.deleteOfficeDateById}
               />
             </AccordianItem>
           </Accordian>
@@ -234,7 +221,7 @@ function OrdinaPage() {
             I have created a function that when called creates the blueprints,
             without any information for the officeData json.
           </p>
-          <Code description={null} language="javascript" json={json15} />
+          <Code description={null} language="javascript" json={allSnippets.bluePrints} />
         </>
       ),
     },

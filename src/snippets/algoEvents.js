@@ -1,4 +1,4 @@
-export const jsonc = ` public class PriceFilterAlgo : FilterAlgoBase
+export default ` public class PriceFilterAlgo : FilterAlgoBase
 {
     private float? lowerBound;
     private float? upperBound;

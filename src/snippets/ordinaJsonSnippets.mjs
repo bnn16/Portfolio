@@ -1,4 +1,4 @@
-export const json = `[
+const getUserID = `[
     {
       _id: '658c3684f615cc88d5f43198',
       title: 'Testing meeting',
@@ -35,7 +35,7 @@ export const json = `[
     },
   ]`;
 
-export const json2 = `    {
+const getMeetingID = `    {
   "_id": "658c3684f615cc88d5f43198",
   "title": "Testing meeting",
   "date": "30-12-2023",
@@ -68,7 +68,7 @@ export const json2 = `    {
 }
 `;
 
-export const json3 = `'{
+const postMeetings = `'{
 "title": "Testing meeting",
 "date": "28-12-2023",
 "start_time": "9AM",
@@ -84,12 +84,12 @@ export const json3 = `'{
 ]
 `;
 
-export const json4 = `{  
+const patchUserID = `{  
 "meetingID": "658c3684f615cc88d5f43198",
 "status": "accepted"
 }`;
 
-export const json5 = `{  
+const patchMeeting = `{  
 "date" : "29-12-2024",
 "start_time": "11AM",
 "end_time": "1PM",
@@ -97,14 +97,14 @@ export const json5 = `{
 "location": "R10"
 }`;
 
-export const json6 = `{  
+const patchInvite = `{  
 "personID": "123",
 "name": "Bogdan",
 "surname": "Nik",
 "email": "bnn@gmail.com"
 }`;
 
-export const json7 = `[
+const getOffice = `[
     {
       "office_name": "...",
       "office_address": "...",
@@ -119,26 +119,26 @@ export const json7 = `[
     },
   ]`;
 
-export const json8 = `{
+const postOffice = `{
     "office_name": "...",
     "office_address": "...",
     "office_image": "...",
 }`;
 
-export const json9 = `{
+const getOfficeID = `{
   "office_name": "...",
   "office_address": "...",
   "office_image": "...",
   "offideId": "id..."
 },`;
 
-export const json10 = `{
+const patchOfficeID = `{
   "office_name": "New Office Name",
   "office_address": "123 New Street",
   "office_image": "https://example.com/image.jpg"
 }`;
 
-export const json11 = `[
+const getOfficeData = `[
   {
       "_id": "...",
       "date": "23-12-2023",
@@ -162,7 +162,7 @@ export const json11 = `[
 ]
 `;
 
-export const json12 = `{
+const getOfficeDataById = `{
   "_id": "123",
   "date": "23-12-2023",
   "offices": [
@@ -183,7 +183,7 @@ export const json12 = `{
   "__v": "..."
 }`;
 
-export const json13 = `{  
+const patchOfficeDateByID = `{  
   "floorName": "testing",
   "person": {
       "name": "john",
@@ -194,12 +194,12 @@ export const json13 = `{
 }
 }`;
 
-export const json14 = `{  
+const deleteOfficeDateById = `{  
   "floorName": "testing",
   "personID": "123"
 }`;
 
-export const json15 = `async function createOfficeInfo() {
+const bluePrints = `async function createOfficeInfo() {
   let officeIDs = await getOfficeIDs();
 
   if (officeIDs.length === 0) {
@@ -256,3 +256,23 @@ export const json15 = `async function createOfficeInfo() {
     }
   }
 }`;
+
+const allSnippets = {
+  getUserID,
+  getMeetingID,
+  postMeetings,
+  patchUserID,
+  patchMeeting,
+  patchInvite,
+  getOffice,
+  postOffice,
+  getOfficeID,
+  patchOfficeID,
+  getOfficeData,
+  getOfficeDataById,
+  patchOfficeDateByID,
+  deleteOfficeDateById,
+  bluePrints,
+};
+
+export default allSnippets;

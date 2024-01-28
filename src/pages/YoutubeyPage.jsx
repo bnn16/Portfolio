@@ -1,4 +1,5 @@
 import React from 'react';
+// Components
 import {
   DiJava,
   DiPython,
@@ -9,6 +10,7 @@ import { FaNodeJs } from 'react-icons/fa';
 import Icons from '../components/Icons';
 import Layout from '../components/Layout';
 import Image from '../components/Image';
+// Images
 import architecture from '../img/youtubey/architecture.png';
 import micro from '../img/youtubey/micro.png';
 import python from '../img/youtubey/python.png';

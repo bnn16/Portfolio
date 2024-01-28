@@ -1,4 +1,4 @@
-export default {
+const particlesConfig = {
   autoPlay: true,
   background: {
     color: {
@@ -529,3 +529,5 @@ export default {
     },
   },
 };
+
+export default particlesConfig;

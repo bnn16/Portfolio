@@ -1,9 +1,11 @@
 import React from 'react';
+// Components
 import { DiGo } from 'react-icons/di';
 import { SiRabbitmq } from 'react-icons/si';
 import Layout from '../components/Layout';
 import Icons from '../components/Icons';
 import Image from '../components/Image';
+// Images
 import init from '../img/grpc/init.png';
 import after from '../img/grpc/after.png';
 import final from '../img/grpc/final.png';

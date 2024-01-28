@@ -1,13 +1,14 @@
 import React from 'react';
+// Components
 import { SiCsharp, SiMysql } from 'react-icons/si';
 import Layout from '../components/Layout';
-
-import strategy from '../img/event/strategy.png';
-import grades from '../img/event/grades.png';
 import Image from '../components/Image';
 import Icons from '../components/Icons';
 import Code from '../components/Code';
-import { jsonc } from '../constants/events';
+//  Images
+import strategy from '../img/event/strategy.png';
+import grades from '../img/event/grades.png';
+import algorithmSnippet from '../snippets/algoEvents';
 
 function EventPlatformPage() {
   const sections = [
@@ -109,7 +110,7 @@ function EventPlatformPage() {
             that has only 1 tag in common with you. And I`m very proud of the
             algorithm I came up with.
           </p>
-          <Code description="Algorithm code" language="csharp" json={jsonc} />
+          <Code description="Algorithm code" language="csharp" json={algorithmSnippet} />
         </div>
       ),
     },
