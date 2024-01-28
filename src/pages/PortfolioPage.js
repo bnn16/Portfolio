@@ -50,29 +50,29 @@ const PortfolioPage = () => {
             page is not SEO friendly, but I'm not too worried about that.
           </p>
           <p className='text-lg'>Color Palette</p>
-          <ul class='list-disc'>
+          <ul className='list-disc'>
             <li>
-              <span class='text-accent'>#FFFCF2:</span> Draws attention to key
-              elements with a warm and bright hue.
+              <span className='text-accent'>#FFFCF2:</span> Draws attention to
+              key elements with a warm and bright hue.
             </li>
             <li>
-              <span class='text-accent-light'>#CCC5B9:</span> Complements the
-              accent, adding depth and subtlety to the design.
+              <span className='text-accent-light'>#CCC5B9:</span> Complements
+              the accent, adding depth and subtlety to the design.
             </li>
             <li>
-              <span class='text-flame'>#EB5E28:</span> Infuses energy and
+              <span className='text-flame'>#EB5E28:</span> Infuses energy and
               warmth, creating a vibrant focal point.
             </li>
             <li>
-              <span class='text-flame-dark'>#C8491E:</span> Adds depth and
+              <span className='text-flame-dark'>#C8491E:</span> Adds depth and
               contrast, enhancing visual hierarchy.
             </li>
             <li>
-              <span class='text-background-light'>#403D39:</span> Provides a
+              <span className='text-background-light'>#403D39:</span> Provides a
               clean canvas for readability and a modern look.
             </li>
             <li>
-              <span class='text-background-dark bg-accent'>#2D2B27</span>:
+              <span className='text-background-dark bg-accent'>#2D2B27</span>:
               Grounds the design with a dark background, defining boundaries.
             </li>
           </ul>

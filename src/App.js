@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 function App() {
   const [open, setOpen] = useState(false);
+  console.log(open);
 
   return (
     <div className='bg-deep text-accent'>
