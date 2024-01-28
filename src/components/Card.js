@@ -1,12 +1,14 @@
-import useLockBodyScroll from '@custom-react-hooks/use-lock-body-scroll';
+import React from 'react';
+import { X } from 'react-feather';
 import { motion } from 'framer-motion';
+import useLockBodyScroll from '@custom-react-hooks/use-lock-body-scroll';
 import PortfolioPage from '../pages/PortfolioPage';
 import OrdinaPage from '../pages/OrdinaPage';
 import YoutubeyPage from '../pages/YoutubeyPage';
 import GrpcPage from '../pages/GrpcPage';
-import { X } from 'react-feather';
 import WebscraperPage from '../pages/WebscraperPage';
 import EventPlatformPage from '../pages/EventPlatformPage';
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 
 const components = {
   portfolio: PortfolioPage,
@@ -22,25 +24,6 @@ function Card({ onClick, data }) {
   const ComponentToRender = components[id];
 
   useLockBodyScroll(true);
-
-  const closeButtonContainerStyles = {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    position: 'sticky',
-    top: '1rem',
-  };
-
-  const closeButtonStyles = {
-    cursor: 'pointer',
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-  };
-
-  // Adjust styles for small screens
-  if (window.innerWidth < 600) {
-    closeButtonContainerStyles.top = '0.5rem';
-    closeButtonStyles.fontSize = '1rem';
-  }
 
   // Additional styles for mobile responsiveness
   const containerStylesMobile = {
@@ -84,17 +67,16 @@ function Card({ onClick, data }) {
           'text-justify border relative rounded-lg border-flame-dark border-opacity-80 bg-background-dark p-4 ' +
           innerContainerClasses
         }
-        onClick={(e) => e.stopPropagation()} // Prevent clicks inside from triggering the background click
+        onClick={(e) => e.stopPropagation()}
       >
-        <div style={closeButtonContainerStyles} className='sm:sticky lg:static'>
-          <button
-            className='text-xl mt-10 mr-4 font-bold text-flame hover:text-accent transition-colors duration-200'
-            onClick={onClick}
-            style={closeButtonStyles}
-          >
-            {<X size={24} />}
-          </button>
-        </div>
+        {/* X button */}
+        <button
+          onClick={onClick}
+          className='absolute top-12 right-8 text-flame-dark cursor-pointer'
+          style={{ position: 'fixed' }}
+        >
+          <X size={24} />
+        </button>
         <div className='w-full sm:w-2/3 lg:w-9/12 mx-auto'>
           <ComponentToRender />
         </div>
@@ -102,4 +84,5 @@ function Card({ onClick, data }) {
     </motion.div>
   );
 }
+
 export default Card;
