@@ -1,6 +1,13 @@
 import Reveal from '../components/Reveal';
 
 function Home() {
+  const scrollTo = (id) => {
+    const element = document.querySelector(id);
+    element.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <section className='w-full min-h-screen text-accent py-12 md:py-24 lg:py-32 flex justify-center items-center'>
       <div className='container px-4 md:px-6'>
@@ -21,7 +28,12 @@ function Home() {
           </Reveal>
           <Reveal>
             <div className='space-x-4'>
-              <button className='btn btn-primary bg-flame text-accent py-4 px-4 rounded hover:bg-flame-dark'>
+              <button
+                onClick={() => {
+                  scrollTo('#contact');
+                }}
+                className='btn btn-primary bg-flame text-accent py-4 px-4 rounded hover:bg-flame-dark'
+              >
                 Contact me
               </button>
             </div>

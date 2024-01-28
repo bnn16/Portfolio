@@ -4,6 +4,7 @@ import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 function Contact() {
   return (
     <footer
+      id='contact'
       className='w-full max-h-3/6 py-12 md:py-24 lg:py-32 flex justify-center items-center relative'
       style={{ backgroundColor: '#2D2B27', zIndex: 10 }}
     >
