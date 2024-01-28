@@ -77,7 +77,7 @@ function Card({ onClick, data }) {
         >
           <X size={24} />
         </button>
-        <div className='w-full sm:w-2/3 lg:w-9/12 mx-auto'>
+        <div className='w-full my-auto sm:w-2/3 lg:w-9/12 mx-auto'>
           <ComponentToRender />
         </div>
       </div>
