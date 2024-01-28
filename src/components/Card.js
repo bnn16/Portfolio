@@ -36,17 +36,29 @@ function Card({ onClick, data }) {
     fontWeight: 'bold',
   };
 
+  // Adjust styles for small screens
   if (window.innerWidth < 600) {
     closeButtonContainerStyles.top = '0.5rem';
     closeButtonStyles.fontSize = '1rem';
   }
 
-  const containerStyles =
-    'fixed inset-0 overflow-y-auto min-w-20 flex items-center justify-center bg-deep bg-opacity-0';
+  // Additional styles for mobile responsiveness
+  const containerStylesMobile = {
+    top: 0,
+    paddingTop: '2rem',
+  };
 
-  const innerContainerClasses =
-    'w-full sm:max-w-2xl md:max-w-4xl lg:max-w-3xl min-w-1/4 max-h-screen overflow-auto';
+  const innerContainerClassesMobile =
+    'w-full min-w-full max-h-screen overflow-auto';
 
+  // Combine styles based on screen width
+  const containerStyles = `fixed inset-0 overflow-y-auto min-w-20 flex items-center justify-center bg-deep bg-opacity-0 ${
+    window.innerWidth < 600 ? containerStylesMobile : ''
+  }`;
+
+  const innerContainerClasses = `w-full sm:max-w-2xl md:max-w-4xl lg:max-w-3xl min-w-1/4 max-h-screen overflow-auto ${
+    window.innerWidth < 600 ? innerContainerClassesMobile : ''
+  }`;
   const animated = {
     layout: 'position',
     animate: { opacity: 1, scale: 1.1 },
