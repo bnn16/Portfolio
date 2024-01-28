@@ -6,6 +6,7 @@ import YoutubeyPage from '../pages/YoutubeyPage';
 import GrpcPage from '../pages/GrpcPage';
 import { X } from 'react-feather';
 import WebscraperPage from '../pages/WebscraperPage';
+import EventPlatformPage from '../pages/EventPlatformPage';
 
 const components = {
   portfolio: PortfolioPage,
@@ -13,10 +14,7 @@ const components = {
   youtubey: YoutubeyPage,
   grpc: GrpcPage,
   webscraper: WebscraperPage,
-  // eventplatform: EventPlatformPage,
-  // library: LibraryPage,
-  // highschool: HighSchoolPage,
-  // number: NumberPage,
+  eventplatform: EventPlatformPage,
 };
 
 function Card({ onClick, data }) {

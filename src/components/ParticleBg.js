@@ -15,15 +15,10 @@ function ParticleBg() {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   return (
     <Particles
       className='absolute top-0 left-0 w-full h-full z-0'
       id='tsparticles'
-      particlesLoaded={particlesLoaded}
       options={particles}
     />
   );

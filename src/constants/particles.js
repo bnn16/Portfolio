@@ -24,7 +24,7 @@ export default {
   defaultThemes: {},
   delay: 0,
   fullScreen: {
-    enable: false,
+    enable: true,
     zIndex: 0,
   },
   detectRetina: true,

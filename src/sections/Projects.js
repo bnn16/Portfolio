@@ -41,22 +41,6 @@ function Projects() {
       icon: <SiDotnet />,
       id: 'eventplatform',
     },
-
-    {
-      title: 'Library Management',
-      icon: <SiDotnet />,
-      id: 'library',
-    },
-    {
-      title: 'High School Project',
-      icon: <FaReact />,
-      id: 'highschool',
-    },
-    {
-      title: 'Number Guessing Game',
-      icon: <DiJavascript1 />,
-      id: 'number',
-    },
   ];
 
   const [expandedIndex, setExpandedIndex] = useState(null);
