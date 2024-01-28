@@ -3,7 +3,7 @@ import React from 'react';
 function Layout({ children, title, sections }) {
   return (
     <div className='container mx-auto p-8'>
-      <div className='text-center text-justify mx-4'>
+      <div className='text-left lg:text-justify md:text-justify sm:text-left mx-4'>
         <h1 className='text-4xl font-bold mb-2'>{title}</h1>
 
         {sections &&
@@ -17,7 +17,6 @@ function Layout({ children, title, sections }) {
               {section.content && <div>{section.content}</div>}
             </section>
           ))}
-
         {children}
       </div>
     </div>

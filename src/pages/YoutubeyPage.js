@@ -49,8 +49,6 @@ const YoutubeyPage = () => {
               <DiJava />,
               <DiPython />,
               <FaNodeJs />,
-              <DiMongodb />,
-              <DiFirebase />,
             ]}
           />
           <p>

@@ -29,7 +29,7 @@ function Card({ onClick, data }) {
     display: 'flex',
     justifyContent: 'flex-end',
     position: 'sticky',
-    top: '1rem', // Default top position for small screens
+    top: '1rem',
   };
 
   const closeButtonStyles = {
@@ -37,6 +37,11 @@ function Card({ onClick, data }) {
     fontSize: '1.5rem',
     fontWeight: 'bold',
   };
+
+  if (window.innerWidth < 600) {
+    closeButtonContainerStyles.top = '0.5rem';
+    closeButtonStyles.fontSize = '1rem';
+  }
 
   const containerStyles =
     'fixed inset-0 overflow-y-auto min-w-20 flex items-center justify-center bg-deep bg-opacity-0';
