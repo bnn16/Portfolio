@@ -2,6 +2,7 @@ import Home from './sections/Home';
 import Header from './sections/Header';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
+import Contact from './sections/Contact';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Home />
       <Experience />
       <Projects />
+      <Contact />
     </div>
   );
 }
