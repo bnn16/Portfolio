@@ -5,7 +5,7 @@ import scroll from '../img/scroll.png';
 import ParticleBg from '../components/ParticleBg';
 import Reveal from '../components/Reveal';
 
-function Header() {
+const Header = () => {
   const words = ['Developer', 'Engineer', 'Creative Thinker'];
 
   return (
@@ -42,6 +42,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

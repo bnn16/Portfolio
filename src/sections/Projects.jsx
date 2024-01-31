@@ -7,7 +7,7 @@ import Card from '../components/Card';
 import Modal from '../components/Modal';
 import MiniCard from '../components/MiniCard';
 
-function Projects({ setOpen }) {
+const Projects = ({ setOpen }) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
@@ -105,7 +105,7 @@ function Projects({ setOpen }) {
       </AnimatePresence>
     </div>
   );
-}
+};
 
 Projects.propTypes = {
   setOpen: PropTypes.func.isRequired,

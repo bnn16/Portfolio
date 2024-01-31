@@ -10,7 +10,7 @@ import strategy from '../img/event/strategy.png';
 import grades from '../img/event/grades.png';
 import algorithmSnippet from '../snippets/algoEvents';
 
-function EventPlatformPage() {
+const EventPlatformPage = () => {
   const sections = [
     {
       title: 'Introduction',
@@ -153,6 +153,6 @@ function EventPlatformPage() {
   ];
 
   return <Layout title="Event Platform" sections={sections} />;
-}
+};
 
 export default EventPlatformPage;

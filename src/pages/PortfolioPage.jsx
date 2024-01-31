@@ -5,7 +5,7 @@ import { SiGithubpages, SiTailwindcss } from 'react-icons/si';
 import Layout from '../components/Layout';
 import Icons from '../components/Icons';
 
-function PortfolioPage() {
+const PortfolioPage = () => {
   const sections = [
     {
       title: 'Introduction',
@@ -149,6 +149,6 @@ function PortfolioPage() {
   ];
 
   return <Layout title="Portfolio" sections={sections} />;
-}
+};
 
 export default PortfolioPage;

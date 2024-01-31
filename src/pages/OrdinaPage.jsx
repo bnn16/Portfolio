@@ -17,7 +17,7 @@ import ms2 from '../img/ordina/ms2.png';
 // Snippets
 import allSnippets from '../snippets/ordinaJsonSnippets.mjs';
 
-function OrdinaPage() {
+const OrdinaPage = () => {
   const sections = [
     {
       title: '',
@@ -408,6 +408,6 @@ function OrdinaPage() {
   ];
 
   return <Layout title="Ordina" sections={sections} />;
-}
+};
 
 export default OrdinaPage;

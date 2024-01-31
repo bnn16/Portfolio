@@ -8,7 +8,7 @@ import captcha from '../img/captcha.jpg';
 import Image from '../components/Image';
 import Icons from '../components/Icons';
 
-function WebscraperPage() {
+const WebscraperPage = () => {
   const sections = [
     {
       title: 'Introduction',
@@ -124,6 +124,6 @@ function WebscraperPage() {
   ];
 
   return <Layout title="Web Scraper" sections={sections} />;
-}
+};
 
 export default WebscraperPage;

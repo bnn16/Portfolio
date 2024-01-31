@@ -10,7 +10,7 @@ import init from '../img/grpc/init.png';
 import after from '../img/grpc/after.png';
 import final from '../img/grpc/final.png';
 
-function GrpcPage() {
+const GrpcPage = () => {
   const sections = [
     {
       title: 'Introduction',
@@ -133,6 +133,6 @@ function GrpcPage() {
   ];
 
   return <Layout title="Microservices" sections={sections} />;
-}
+};
 
 export default GrpcPage;

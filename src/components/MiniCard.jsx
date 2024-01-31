@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-function MiniCard({
+const MiniCard = ({
   isExpanded, onClick, title, icon,
-}) {
+}) => {
   const [iconColor, setIconColor] = useState('#fff');
 
   const controls = useAnimation();
@@ -56,7 +56,7 @@ function MiniCard({
       </div>
     </motion.div>
   );
-}
+};
 
 MiniCard.propTypes = {
   onClick: PropTypes.func.isRequired,

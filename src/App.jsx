@@ -5,7 +5,7 @@ import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 
-function App() {
+const App = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -17,6 +17,6 @@ function App() {
       {open ? null : <Contact />}
     </div>
   );
-}
+};
 
 export default App;

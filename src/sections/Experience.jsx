@@ -2,7 +2,7 @@ import React from 'react';
 import Badge from '../components/Badge';
 import Reveal from '../components/Reveal';
 
-function Experience() {
+const Experience = () => {
   return (
     <div className="min-h-screen z-10 text-accent">
       <div className="p-10 flex flex-col">
@@ -137,6 +137,6 @@ function Experience() {
       </div>
     </div>
   );
-}
+};
 
 export default Experience;

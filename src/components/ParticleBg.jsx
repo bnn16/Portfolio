@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { loadFull } from 'tsparticles';
 import particlesConfig from '../constants/particlesConfig';
 
-function ParticleBg() {
+const ParticleBg = () => {
   const [init, setInit] = useState(false);
 
   // this should be run only once per application lifetime
@@ -25,6 +25,6 @@ function ParticleBg() {
     />
     )
   );
-}
+};
 
 export default ParticleBg;

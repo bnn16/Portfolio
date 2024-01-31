@@ -1,7 +1,7 @@
 import React from 'react';
 import Reveal from '../components/Reveal';
 
-function Home() {
+const Home = () => {
   return (
     <section className="w-full min-h-screen text-accent py-12 md:py-24 lg:py-32 flex justify-center items-center">
       <div className="container px-4 md:px-6">
@@ -43,6 +43,6 @@ function Home() {
       </div>
     </section>
   );
-}
+};
 
 export default Home;

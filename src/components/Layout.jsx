@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Layout({ children, title, sections }) {
+const Layout = ({ children, title, sections }) => {
   return (
     <div className="container mt-12 mx-auto p-8">
       <div className="text-left lg:text-justify md:text-justify sm:text-left mx-4">
@@ -23,7 +23,7 @@ function Layout({ children, title, sections }) {
       </div>
     </div>
   );
-}
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

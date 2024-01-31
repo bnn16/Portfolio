@@ -11,9 +11,9 @@ import PropTypes from 'prop-types';
 
 const AccordianContext = createContext();
 
-export default function Accordian({
+const Accordian = ({
   children, props,
-}) {
+}) => {
   const [selected, setSelected] = useState(null);
 
   const contextValue = useMemo(() => ({ selected, setSelected }), [selected, setSelected]);
@@ -25,16 +25,17 @@ export default function Accordian({
       </AccordianContext.Provider>
     </ul>
   );
-}
+};
+export default Accordian;
 
 Accordian.propTypes = {
   children: PropTypes.node.isRequired,
   props: PropTypes.object.isRequired,
 };
 
-export function AccordianItem({
+export const AccordianItem = ({
   children, value, trigger, method,
-}) {
+}) => {
   const { selected, setSelected } = useContext(AccordianContext);
 
   const open = selected === value;
@@ -103,7 +104,7 @@ export function AccordianItem({
       </div>
     </li>
   );
-}
+};
 
 AccordianItem.propTypes = {
   children: PropTypes.node.isRequired,

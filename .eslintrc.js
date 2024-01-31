@@ -6,6 +6,19 @@ module.exports = {
   extends: 'airbnb',
   overrides: [
     {
+      files: ['*.{js,jsx}'],
+      rules: {
+        'react/function-component-definition': [
+          'off',
+          {
+            namedComponents: 'arrow-function',
+            unnamedComponents: 'arrow-function',
+          },
+        ],
+        'arrow-body-style': 'off', // Disable arrow-body-style rule for this specific rule
+      },
+    },
+    {
       env: {
         node: true,
       },

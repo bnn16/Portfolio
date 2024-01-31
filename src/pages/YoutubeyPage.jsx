@@ -21,7 +21,7 @@ import closed from '../img/youtubey/closed.png';
 import postinfo from '../img/youtubey/postinfo.png';
 import profileedit from '../img/youtubey/profileedit.png';
 
-function YoutubeyPage() {
+const YoutubeyPage = () => {
   const sections = [
     {
       title: 'Introduction',
@@ -394,6 +394,6 @@ function YoutubeyPage() {
   ];
 
   return <Layout title="Youtubey" sections={sections} />;
-}
+};
 
 export default YoutubeyPage;

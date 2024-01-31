@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-function Reveal({ children }) {
+const Reveal = ({ children }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
@@ -45,7 +45,7 @@ function Reveal({ children }) {
       />
     </div>
   );
-}
+};
 
 Reveal.propTypes = {
   children: PropTypes.node.isRequired,

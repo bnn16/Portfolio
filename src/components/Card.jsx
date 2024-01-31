@@ -23,7 +23,7 @@ const components = {
   eventplatform: EventPlatformPage,
 };
 
-function Card({ onClick, data }) {
+const Card = ({ onClick, data }) => {
   const { id } = data;
   const ComponentToRender = components[id];
 
@@ -82,7 +82,7 @@ function Card({ onClick, data }) {
       </div>
     </motion.div>
   );
-}
+};
 
 Card.propTypes = {
   onClick: PropTypes.func.isRequired,

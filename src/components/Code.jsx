@@ -3,7 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlig
 import { twilight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import PropTypes from 'prop-types';
 
-function Code({ description, language, json }) {
+const Code = ({ description, language, json }) => {
   return (
     <>
       <p>{description}</p>
@@ -12,7 +12,7 @@ function Code({ description, language, json }) {
       </SyntaxHighlighter>
     </>
   );
-}
+};
 
 Code.propTypes = {
   description: PropTypes.string.isRequired,

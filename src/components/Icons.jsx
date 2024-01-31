@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Icons({ icons }) {
+const Icons = ({ icons }) => {
   const key = 0;
   return (
     <div className="flex justify-start items-center flex-grow gap-4 pb-4">
@@ -13,7 +13,7 @@ function Icons({ icons }) {
       ))}
     </div>
   );
-}
+};
 
 Icons.propTypes = {
   icons: PropTypes.array.isRequired,

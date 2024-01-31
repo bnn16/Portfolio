@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-function Modal({ children }) {
+const Modal = ({ children }) => {
   return (
     <motion.div
       className="fixed top-0 left-0 w-full h-full bg-opacity-50 flex items-center justify-center modal-backdrop"
@@ -19,7 +19,7 @@ function Modal({ children }) {
       </motion.div>
     </motion.div>
   );
-}
+};
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,

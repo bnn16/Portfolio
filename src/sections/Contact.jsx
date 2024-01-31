@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-function Contact() {
+const Contact = () => {
   return (
     <footer
       id="contact"
@@ -56,6 +56,6 @@ function Contact() {
       </div>
     </footer>
   );
-}
+};
 
 export default Contact;
