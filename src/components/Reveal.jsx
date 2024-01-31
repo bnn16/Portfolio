@@ -16,7 +16,7 @@ const Reveal = ({ children }) => {
   }, [isInView]);
 
   return (
-    <div ref={ref} className="relative w-fit ">
+    <div ref={ref} className="relative">
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

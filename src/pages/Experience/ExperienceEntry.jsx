@@ -27,8 +27,9 @@ const ExperienceEntry = ({
       </Reveal>
       <Reveal>
         <div className="flex flex-wrap gap-4 mt-4">
-          {experience.skills.map((skill) => {
-            return <Badge text={skill} />;
+          {experience.skills.map((skill, i) => {
+            const key = `${skill}-${i}`;
+            return <Badge key={key} text={skill} />;
           })}
         </div>
       </Reveal>

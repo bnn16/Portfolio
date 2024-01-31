@@ -3,8 +3,15 @@ import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 const CarrouselButtons = ({
-  handlePreviousClick, currentPage, handleNextClick, totalPages,
+  currentPage, setCurrentPage, totalPages,
 }) => {
+  const handlePreviousClick = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
+  };
+
+  const handleNextClick = () => {
+    setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
+  };
   return (
     <div className="flex justify-center mt-4">
       <div className="button-container" style={{ height: '40px' }}>
@@ -37,9 +44,8 @@ const CarrouselButtons = ({
 };
 
 CarrouselButtons.propTypes = {
-  handlePreviousClick: PropTypes.func.isRequired,
   currentPage: PropTypes.number.isRequired,
-  handleNextClick: PropTypes.func.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
   totalPages: PropTypes.number.isRequired,
 };
 

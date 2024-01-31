@@ -16,7 +16,8 @@ const Experience = () => {
         </div>
         <div className="mt-6 space-y-12 w-full flex flex-col justify-center">
           {experiences.map((experience) => {
-            return <ExperienceEntry experience={experience} />;
+            const key = `${experience.title}-${experience.role}`;
+            return <ExperienceEntry key={key} experience={experience} />;
           })}
         </div>
         <div />
