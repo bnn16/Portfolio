@@ -14,12 +14,14 @@ const ContactInfo = ({
   const icon = iconMap[iconName];
 
   return (
-    <div className="flex items-center space-x-4 md:space-x-8">
-      {icon && <div className="text-xl text-flame">{icon}</div>}
-      <span>
-        {label}
-        :
-      </span>
+    <div className="flex flex-col items-center space-x-4 md:space-x-8">
+      <div className="flex flex-row space-x-4">
+        {icon && <div className="text-xl text-flame">{icon}</div>}
+        <span>
+          {label}
+          :
+        </span>
+      </div>
       <a href={link} className="text-flame hover:underline" target="_blank" rel="noopener noreferrer">
         {text}
       </a>

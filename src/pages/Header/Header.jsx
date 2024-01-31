@@ -1,9 +1,9 @@
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
-import scroll from '../img/scroll.png';
-import ParticleBg from '../components/ParticleBg';
-import Reveal from '../components/Reveal';
+import scroll from '../../img/scroll.png';
+import ParticleBg from '../../components/ParticleBg';
+import Reveal from '../../components/Reveal';
 
 const Header = () => {
   const words = ['Developer', 'Engineer', 'Creative Thinker'];

@@ -34,7 +34,6 @@ const Contact = () => {
               link="https://github.com/bnn16"
               text="bnn16"
             />
-            <p className="text-center">Thank you for reaching out!</p>
           </div>
         </div>
       </div>
