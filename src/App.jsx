@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Home from './sections/Home';
 import Header from './sections/Header';
 import Experience from './pages/Experience/Experience';
-import Projects from './sections/Projects';
+import Projects from './pages/Projects/Projects';
 import Contact from './sections/Contact';
 
 const App = () => {

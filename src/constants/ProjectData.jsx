@@ -5,7 +5,7 @@ import {
 import { FaReact } from 'react-icons/fa';
 import { SiDotnet } from 'react-icons/si';
 
-const projectData = [
+const projectDataShort = [
   {
     title: 'Portfolio',
     icon: <FaReact />,
@@ -39,4 +39,4 @@ const projectData = [
   },
 ];
 
-export default projectData;
+export default projectDataShort;
