@@ -3,7 +3,7 @@ import Home from './sections/Home';
 import Header from './sections/Header';
 import Experience from './pages/Experience/Experience';
 import Projects from './pages/Projects/Projects';
-import Contact from './sections/Contact';
+import Contact from './pages/Contact/Contact';
 
 const App = () => {
   const [open, setOpen] = useState(false);
