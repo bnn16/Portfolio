@@ -15,7 +15,8 @@ module.exports = {
             unnamedComponents: 'arrow-function',
           },
         ],
-        'arrow-body-style': 'off', // Disable arrow-body-style rule for this specific rule
+        'arrow-body-style': 'off',
+        'no-multi-str': 'off',
       },
     },
     {

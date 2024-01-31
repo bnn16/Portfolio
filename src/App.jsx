@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Home from './sections/Home';
 import Header from './sections/Header';
-import Experience from './sections/Experience';
+import Experience from './pages/Experience/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 
